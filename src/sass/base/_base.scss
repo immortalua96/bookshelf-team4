@@ -1,0 +1,42 @@
+@mixin screen($size) {
+    $desktop: '(min-width: 1440px)';
+    $tablet: '(min-width: 768px)';
+    $mobile: '(min-width: 375px)';
+    @if $size ==desktop {
+      @media only screen and #{$desktop} {
+        @content;
+      }
+    } @else if $size ==tablet {
+      @media only screen and #{$tablet} {
+        @content;
+      }
+    } @else if $size ==mobile {
+      @media only screen and #{$mobile} {
+        @content;
+      }
+    }
+  }
+  .section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+    @include screen(tablet) {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+    @include screen(desktop) {
+      padding-top: 94px;
+      padding-bottom: 94px;
+    }
+  }
+  .container {
+    max-width: 375px;
+    padding: 0 20px;
+    margin: 0 auto;
+    @include screen(tablet) {
+      max-width: 768px;
+      padding: 0 32px;
+    }
+    @include screen(desktop) {
+      max-width: 1440px;
+    }
+  }

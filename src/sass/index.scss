@@ -1,4 +1,7 @@
 @import './common';
-@import './_header';
+@import './base/reset';
+@import './base/root';
+@import './base/base';
 
+@import './_header';
 
