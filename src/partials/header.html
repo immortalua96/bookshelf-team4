@@ -1,22 +1,25 @@
 <header>
-  <div class="container flexForHeader"> 
-    <div class="logo">
-      <a href="./index.html" class="logoText">Bookshelf</a>
-    </div>
+  <div class="container flexForHeader">
+    <a href="./index.html" class="headerLogo">
+      <svg class="logoIcon">
+        <use href="/src/icons/symbol-defs.svg#icon-logo"></use>
+      </svg>
+      <span class="logoText">Bookshelf</span>
+    </a>
 
     <nav class="headerNav">
-      <ul class="headerSel">
-        <li>
-          <a href="index.html" class="homeLink">
-            home
-          </a></li>
-        <li>
-           <a href="shopingList.html"class="shoppingList">shopping list
-           <svg class="cartHeader">
+      <ul class="headerList">
+        <li class="headerListItem">
+          <a href="index.html" class="homeLink current"> home </a>
+        </li>
+        <li class="headerListItem">
+          <a href="shopingList.html" class="shoppingList"
+            >shopping list
+            <svg class="cartHeader">
               <use href="/src/icons/symbol-defs.svg#icon-cart"></use>
-             </svg> 
-
-        </a></li>
+            </svg>
+          </a>
+        </li>
       </ul>
     </nav>
 
@@ -27,9 +30,9 @@
 
     <button class="userButton">
       <span class="userSpan"> Sign Up</span>
-     <svg class="arrowSignInHeader">
-      <use href="/src/icons/symbol-defs.svg#icon-arrowSignIn"></use>
-     </svg>
+      <svg class="arrowSignInHeader">
+        <use href="/src/icons/symbol-defs.svg#icon-arrowSignIn"></use>
+      </svg>
     </button>
   </div>
 </header>

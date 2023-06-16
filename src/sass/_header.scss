@@ -1,5 +1,110 @@
+.flexForHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+  // position: absolute;
+  width: 1440px;
+  height: 72px;
+  left: 0px;
+  top: 0px;
+  background: #ffffff;
+  border: 1.5px solid #111111;
+  border-radius: 0px 0px 8px 8px;
+}
+
+.headerLogo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #000000;
+  padding-left: 20px;
+}
+
+.logoIcon {
+  width: 24px;
+  height: 24px;
+}
+.logoText {
+  width: 77px;
+  color: #000000;
+  line-height: 18px;
+}
+.headerNav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.headerList {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.headerListItem:not(:last-child) {
+  margin-right: 24px;
+}
+
+.homeLink {
+  width: 40px;
+
+  margin-top: auto;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+
+  color: var(--text-color-primary);
+}
+
+.current {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 8px 16px;
+  gap: 10px;
+
+  width: 72px;
+  height: 34px;
+
+  background: #eac645;
+  border-radius: 36px;
+}
+
+.shoppingList {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+
+  color: var(--text-color-primary);
+}
+
+.cartHeader {
+  width: 20px;
+  height: 20px;
+  margin-left: 4px;
+}
+
 /* The switch - the box around the slider */
 .switch {
+  margin-left: 718px;
   position: relative;
   display: inline-block;
   width: 40px;
@@ -21,8 +126,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(180deg, #4F2EE8 0%, #DCDCDC 100%);
-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -40,12 +145,12 @@ box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 input:checked + .slider {
-  background: linear-gradient(180deg, #4F2EE8 0%, #686868 100%);
+  background: linear-gradient(180deg, #4f2ee8 0%, #686868 100%);
   box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 input:focus + .slider {
-  background: linear-gradient(180deg, #4F2EE8 0%, #686868 100%);
+  background: linear-gradient(180deg, #4f2ee8 0%, #686868 100%);
   box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
@@ -58,8 +163,6 @@ input:checked + .slider:before {
 /* Rounded sliders */
 .slider.round {
   border-radius: 34px;
-
-  
 }
 
 .slider.round:before {
@@ -67,6 +170,7 @@ input:checked + .slider:before {
 }
 
 .userButton {
+  margin-right: 10px;
   width: 184px;
   height: 48px;
 
@@ -78,9 +182,6 @@ input:checked + .slider:before {
   justify-content: space-between;
   align-items: center;
   padding: 0px;
- 
-
-
 }
 .userSpan {
   width: 46px;
@@ -100,78 +201,10 @@ input:checked + .slider:before {
   color: #ffffff;
 }
 
-.logoText {
-  width: 77px;
-
-  color: #000000;
- 
-  line-height: 18px;
-}
-
-
-.arrowSignInHeader{
-
+.arrowSignInHeader {
   width: 20px;
   height: 20px;
   margin-right: 14px;
   margin-top: 14px;
   margin-bottom: 14px;
-  
-}
-
-
-.flexForHeader{
-
-display: flex;
-align-items: center;
-}
-
-.homeLink{
-
-  width: 40px;
-
-  margin-top: auto; 
-  font-family: 'DM Sans';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: -0.04em;
-  text-transform: uppercase;
-  
-  color: var(--text-color-primary);
-  
-
-}
-
-.shoppingList{
-
-  display: flex;
-  align-items: center;
-  text-transform: uppercase;
-
-font-family: 'DM Sans';
-font-style: normal;
-font-weight: 500;
-font-size: 14px;
-line-height: 18px;
-letter-spacing: -0.04em;
-
-
-color: var(--text-color-primary)
-}
-
-.cartHeader{
-width: 20px;
-height: 20px;
-margin-left: 4px;
-
-}
-
-.headerSel {
-  display: flex;
-  align-items: flex-end;
-  padding: 0;
-  gap: 24px;
-  margin-bottom: 0;
 }
