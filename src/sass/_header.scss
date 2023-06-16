@@ -74,6 +74,7 @@ input:checked + .slider:before {
   align-items: center;
   padding: 0px;
   gap: 90px;
+  isolation: isolate;
 }
 .userSpan {
   width: 46px;
