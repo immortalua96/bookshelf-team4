@@ -1,7 +1,7 @@
 import axios from 'axios';
 const CATEGORIES_URL =
   'https://books-backend.p.goit.global/books/category-list ';
-export async function fetchImages(value, pageNr) {
+export async function fetchCategories() {
   try {
     const response = await axios.get(`${CATEGORIES_URL}`);
     const data = response.data;
