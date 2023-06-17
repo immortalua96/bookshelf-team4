@@ -1,21 +1,21 @@
-
 .best-sellers {
- font-family: var(--font-primary);
-font-weight: 700;
-font-size: 48px;
-line-height: (52 / 48);
-letter-spacing: -0.04em;
-color: var(--text-color-primary);
-margin-bottom: 40px;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 48px;
+  line-height: (52 / 48);
+  letter-spacing: -0.04em;
+  color: var(--text-color-primary);
+  margin-bottom: 40px;
 }
 
 .best-sellers-accent {
- font-family: var(--font-primary);
-font-weight: 700;
-font-size: 48px;
-line-height: (52 / 48);
-letter-spacing: -0.04em;
-color: var(--color-accent);
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 48px;
+  line-height: (52 / 48);
+  letter-spacing: -0.04em;
+  color: var(--color-accent);
+  isolation: isolate;
 }
 
 .list_name {
@@ -34,7 +34,6 @@ color: var(--color-accent);
   gap: 24px;
   margin-bottom: 32px;
 }
-
 
 .book_image {
   margin-bottom: 14px;
@@ -79,14 +78,14 @@ color: var(--color-accent);
 #scrollUpBtn {
   width: 54px;
   height: 54px;
-  display: none; 
+  display: none;
   position: fixed;
   bottom: 20px; /* Place the button at the bottom of the page */
   right: 30px; /* Place the button 30px from the right */
   z-index: 99; /* Make sure it does not overlap */
   border: none;
-outline: 5px solid rgba(79, 46, 232, 0.3);;
-background: var(--color-accent);
+  outline: 5px solid rgba(79, 46, 232, 0.3);
+  background: var(--color-accent);
   color: #fff; /* Text color */
   cursor: pointer; /* Add a mouse pointer on hover */
   padding: 15px; /* Some padding */
@@ -99,7 +98,7 @@ background: var(--color-accent);
   outline: none;
   width: 64px;
   height: 64px;
-} 
+}
 .listOneCategoruBooks {
   display: flex;
 }
