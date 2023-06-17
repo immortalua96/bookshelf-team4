@@ -3,4 +3,6 @@ export const refs = {
   listSuportUkraine: document.getElementById('jsListSuportUkraine'),
   inputSwitch: document.querySelector('.darkSwitch'),
   mainPage: document.getElementById('mainPage'),
+  mybutton: document.getElementById('myBtn'),
+
 };
