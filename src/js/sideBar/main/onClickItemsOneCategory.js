@@ -6,12 +6,17 @@ import { renderBestBooks } from './renderBestBooks';
 
 renderListCategories();
 refs.listCategories.addEventListener('click', onClickItemsOneCategory);
-async function onClickItemsOneCategory(ev) {
+export async function onClickItemsOneCategory(ev) {
   if (
     ev.target.nodeName === 'LI' &&
     ev.target.textContent !== 'All categories'
   ) {
     clearMain();
+    const prevActive = document.querySelector('.currentActiveLi');
+    if (prevActive) {
+      prevActive.classList.remove('currentActiveLi');
+    }
+    ev.target.classList.add('currentActiveLi');
     const category = ev.target.textContent;
     const data = await fetchGategoryBooks(category);
 
@@ -28,10 +33,10 @@ async function onClickItemsOneCategory(ev) {
       .map(
         ({ _id, title, book_image, author }) =>
           `
-      <li id = "${_id}">
-        <img src="${book_image}" alt="">
-          <h3>${title}</h3>
-          <p>${author}</p></li>
+      <li class="bookItemLI">
+        <img src="${book_image}" alt="${title}" class="bookItemImage" id = "${_id}">
+          <h3 class="bookItemTitle">${title}</h3>
+          <p class="bookItemAuthor">${author}</p></li>
         <li>
     
       `
