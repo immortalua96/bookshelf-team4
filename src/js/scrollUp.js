@@ -1,13 +1,13 @@
 import { refs } from './refs';
 
 function scrollUp () {
-    refs.mybutton.addEventListener('click', topFunction)
+    refs.ScrUpButton.addEventListener('click', topFunction)
     window.onscroll = function() {scrollFunction()}
     function scrollFunction() {
         if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            refs.mybutton.style.display = "block";
+            refs.ScrUpButton.style.display = "block";
         } else {
-            refs.mybutton.style.display = "none";
+            refs.ScrUpButton.style.display = "none";
         }
     }
 
