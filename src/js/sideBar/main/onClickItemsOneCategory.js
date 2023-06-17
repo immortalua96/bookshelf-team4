@@ -34,9 +34,9 @@ export async function onClickItemsOneCategory(ev) {
         ({ _id, title, book_image, author }) =>
           `
       <li class="bookItemLI">
-        <img src="${book_image}" alt="${title}" class="bookItemImage" id = "${_id}">
-          <h3 class="bookItemTitle">${title}</h3>
-          <p class="bookItemAuthor">${author}</p></li>
+        <img src="${book_image}" alt="${title}" class="book_image" id = "${_id}">
+          <h3 class="book_title">${title}</h3>
+          <p class="book_author">${author}</p></li>
         <li>
     
       `
