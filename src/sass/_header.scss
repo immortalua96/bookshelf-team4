@@ -21,9 +21,10 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  // background-color: #ccc;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+  background: linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%);
 }
 //polzunok
 .slider:before {
@@ -39,7 +40,8 @@
 }
 
 input:checked + .slider {
-  background-color: #2196f3;
+  // background-color: #2196f3;
+  background: linear-gradient(180deg, #4f2ee8 0%, #686868 100%);
 }
 
 input:focus + .slider {
@@ -97,4 +99,10 @@ input:checked + .slider:before {
   height: 13.27px;
 
   color: #000000;
+}
+.imgAmazon {
+  width: 200px;
+  height: auto;
+  fill: #111111;
+  // isolation: isolate;
 }
