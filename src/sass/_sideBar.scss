@@ -3,7 +3,6 @@
   height: 472px;
   margin-top: 40px;
   margin-bottom: 86px;
-  margin-right: 40px;
   gap: 32px;
   display: flex;
   flex-direction: column;
@@ -101,7 +100,6 @@
   line-height: 1.14;
   letter-spacing: -0.04em;
   color: #ffffff;
-  
 }
 .counterPoint {
   font-family: 'DM Sans';
@@ -109,28 +107,27 @@
   font-size: 14px;
   line-height: 18px;
 }
-.nameSupportUkraine{
+.nameSupportUkraine {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
 }
 
-  .listSuportUkraine{
-    color: #FFFFFF;
-list-style: none;
-display: flex;
-flex-direction: column;
-align-items: start;
-padding: 0px;
-gap: 20px;
-margin-top: 40px;
-    
-  }
-  .listItemSupport{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px
-  }
-.img-foundation{
+.listSuportUkraine {
+  color: #ffffff;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 0px;
+  gap: 20px;
+  margin-top: 40px;
+}
+.listItemSupport {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.img-foundation {
   height: 32px;
 }
