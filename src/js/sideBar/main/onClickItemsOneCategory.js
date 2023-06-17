@@ -6,7 +6,7 @@ import { renderBestBooks } from './renderBestBooks';
 
 renderListCategories();
 refs.listCategories.addEventListener('click', onClickItemsOneCategory);
-async function onClickItemsOneCategory(ev) {
+export async function onClickItemsOneCategory(ev) {
   if (
     ev.target.nodeName === 'LI' &&
     ev.target.textContent !== 'All categories'
@@ -33,8 +33,8 @@ async function onClickItemsOneCategory(ev) {
       .map(
         ({ _id, title, book_image, author }) =>
           `
-      <li id = "${_id}">
-        <img src="${book_image}" alt="">
+      <li >
+        <img src="${book_image}" alt="${title}" id = "${_id}">
           <h3>${title}</h3>
           <p>${author}</p></li>
         <li>
