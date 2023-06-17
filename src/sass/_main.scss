@@ -1,10 +1,86 @@
+
+.best-sellers {
+ font-family: var(--font-primary);
+font-weight: 700;
+font-size: 48px;
+line-height: (52 / 48);
+letter-spacing: -0.04em;
+color: var(--text-color-primary);
+margin-bottom: 40px;
+}
+
+.best-sellers-accent {
+ font-family: var(--font-primary);
+font-weight: 700;
+font-size: 48px;
+line-height: (52 / 48);
+letter-spacing: -0.04em;
+color: var(--color-accent);
+}
+
+.list_name {
+  font-family: var(--font-primary);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: (24 / 14);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-color-secondary);
+  margin-bottom: 18px;
+}
+
 .itemsBooksOfCategory {
   display: flex;
+  gap: 24px;
+  margin-bottom: 32px;
 }
 
 #scrollUpBtn {
   width: 54px;
-  height: 54px;
+  height: 54px;}
+.book_image {
+  margin-bottom: 14px;
+}
+
+.book_title {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: (18 / 16);
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--text-color-primary);
+  margin-bottom: 4px;
+}
+
+.book_author {
+  font-family: var(--font-primary);
+  font-style: italic;
+  font-size: 12px;
+  line-height: (14 / 12);
+  letter-spacing: -0.04em;
+  color: var(--text-color-secondary);
+}
+
+.see_more {
+  background-color: var(--bg-color-light);
+  display: block;
+  margin-left: auto;
+  border: 2px solid var(--color-accent);
+  border-radius: 40px;
+  padding: 14px 28px;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: (18 / 14);
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--text-color-primary);
+}
+
+#myBtn {
+  width: 64px;
+  height: 64px;
   display: none; 
   position: fixed; 
   bottom: 20px; 
@@ -27,6 +103,12 @@
 .listOneCategoruBooks {
   display: flex;
 }
+
+
+
+
+
+
 .containerFlex {
   display: flex;
 }

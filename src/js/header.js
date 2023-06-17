@@ -1,8 +1,6 @@
 import { refs } from './refs';
 import Darkmode from 'darkmode-js';
 
-console.log(refs.inputSwitch);
-
 refs.inputSwitch.addEventListener('click', e => {
   const options = {
     bottom: '64px', // default: '32px'
