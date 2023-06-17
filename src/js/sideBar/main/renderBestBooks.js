@@ -6,6 +6,8 @@ export async function renderBestBooks() {
     .map(
       ({ list_name, books }) => `<ul>
     <li>
+    
+
       <h2>${list_name}</h2>
       <ul class="itemsBooksOfCategory">
         <li>

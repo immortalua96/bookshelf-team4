@@ -12,6 +12,11 @@ async function onClickItemsOneCategory(ev) {
     ev.target.textContent !== 'All categories'
   ) {
     clearMain();
+    const prevActive = document.querySelector('.currentActiveLi');
+    if (prevActive) {
+      prevActive.classList.remove('currentActiveLi');
+    }
+    ev.target.classList.add('currentActiveLi');
     const category = ev.target.textContent;
     const data = await fetchGategoryBooks(category);
 
