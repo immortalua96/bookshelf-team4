@@ -1,6 +1,6 @@
 import { refs } from '../../refs';
 import { fetchBestBooks } from '../../fetchApi';
-async function renderBestBooks() {
+export async function renderBestBooks() {
   const data = await fetchBestBooks();
   const markup = data
     .map(
@@ -34,23 +34,7 @@ async function renderBestBooks() {
   </ul>`
     )
     .join('');
-  console.log(data);
+
   refs.mainPage.insertAdjacentHTML('beforeend', markup);
 }
-
 renderBestBooks();
-
-// const markup = data.map(({ books }) => {
-//   const topFiveBooks = books
-//     .map(
-//       ({ title, author, book_image, list_name }) => `
-//       <h2>${list_name}</h2>
-//       <div>
-//   <img src="${book_image}" alt="${title}">
-//   <h3>${title}</h3>
-//   <p>${author}</p>
-// </div>`
-//     )
-//     .join('');
-//   return topFiveBooks;
-// });
