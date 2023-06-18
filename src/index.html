@@ -10,8 +10,9 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Josefin+Sans&display=swap"
       rel="stylesheet"
     />
-
+    
     <link href="./sass/index.scss" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   </head>
   <body>
     <div class="mask">
@@ -23,11 +24,11 @@
       <include src="./partials/main.html"></include>
     </div>
 
-    <button id="scrollUpBtn" title="Go to top">
+    <a id="go-top" title="Go to top">
       <svg width="24" height="24">
-        <use href="./icons/symbol-defs.svg#icon-arrow-Up"></use>
+      <use href="./icons/symbol-defs.svg#icon-arrow-Up"></use>
       </svg>
-    </button>
+    </a>
 
     <script src="./index.js" type="module"></script>
   </body>
