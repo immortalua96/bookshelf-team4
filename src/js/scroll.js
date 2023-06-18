@@ -20,7 +20,7 @@ $(function() {
    });
 
 
-   refs.ScrDownBtn.addEventListener('click', onScrollSmooth)
+   refs.scrDownBtn.addEventListener('click', onScrollSmooth)
    
    function onScrollSmooth () { 
     const { height: cardHeight } = refs.listSuportUkraine.firstElementChild.getBoundingClientRect();
