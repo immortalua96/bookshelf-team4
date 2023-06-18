@@ -110,6 +110,7 @@ img {
   width: 77px;
   color: #000000;
   line-height: 18px;
+  font-weight: 700;
 }
 
 .headerNav {
@@ -277,10 +278,10 @@ input:checked + .slider:before {
   margin-bottom: 14px;
 }
 
-.imgAmazon {
+.amazonLogo {
   width: 200px;
-  height: auto;
-  fill: #111111;
+  height: 100px;
+  fill: red;
 }
 
 .best-sellers {
@@ -344,7 +345,7 @@ input:checked + .slider:before {
 }
 
 .see_more {
-  background-color: var(--bg-color-light);
+  background-color: transparent;
   display: block;
   margin-left: auto;
   border: 2px solid var(--color-accent);
@@ -357,31 +358,32 @@ input:checked + .slider:before {
   letter-spacing: -0.01em;
   text-transform: uppercase;
   color: var(--text-color-primary);
+  isolation: isolate;
 }
 
-#scrollUpBtn {
+.darkmode--activated .see_more {
+  color: white;
+}
+
+#go-top {
   width: 54px;
   height: 54px;
   display: none;
   position: fixed;
-  bottom: 20px; /* Place the button at the bottom of the page */
-  right: 30px; /* Place the button 30px from the right */
-  z-index: 99; /* Make sure it does not overlap */
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
   border: none;
   outline: 5px solid rgba(79, 46, 232, 0.3);
   background: var(--color-accent);
-  color: #fff; /* Text color */
-  cursor: pointer; /* Add a mouse pointer on hover */
-  padding: 15px; /* Some padding */
-  border-radius: 50%; /* Rounded corners */
-  font-size: 18px; /* Increase font size */
-  /* scroll-behavior: smooth; */
+  color: #fff;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
 }
 
-#scrollUpBtn:hover {
-  outline: none;
-  width: 64px;
-  height: 64px;
+#go-top:hover {
+  outline: 5px solid rgba(79, 46, 232, 0.5);
 }
 
 .listOneCategoruBooks {
@@ -427,18 +429,8 @@ input:checked + .slider:before {
 .itemsCategories:focus {
   font-weight: 700;
   letter-spacing: -0.02em;
-  -webkit-animation: uppercase 0.2s ease-in-out forwards;
-          animation: uppercase 0.2s ease-in-out forwards;
+  animation: uppercase 0.2s ease-in-out forwards;
   color: #4f2ee8;
-}
-
-@-webkit-keyframes uppercase {
-  from {
-    text-transform: none;
-  }
-  to {
-    text-transform: uppercase;
-  }
 }
 
 @keyframes uppercase {
@@ -452,24 +444,12 @@ input:checked + .slider:before {
 .currentActiveLi {
   font-weight: 700;
   letter-spacing: -0.02em;
-  -webkit-animation: uppercase 0.2s ease-in-out forwards;
-          animation: uppercase 0.2s ease-in-out forwards;
+  animation: uppercase 0.2s ease-in-out forwards;
   color: #4f2ee8;
 }
 
 .ulListCategories::-webkit-scrollbar {
   width: 8px;
-}
-
-.ulListCategories::-webkit-scrollbar-track {
-  -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
-  background-color: #f9f9fd;
-  border-radius: 10px;
-}
-
-.ulListCategories::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4f2ee8 18.03%, #ffffff 100%);
 }
 
 .ulListCategories::-webkit-scrollbar-track {
@@ -516,7 +496,8 @@ input:checked + .slider:before {
   gap: 12px;
 }
 
-.listSuportUkraine {
+.listSupportUkraine {
+  height: 292px;
   color: #ffffff;
   list-style: none;
   display: flex;
@@ -525,6 +506,12 @@ input:checked + .slider:before {
   padding: 0px;
   gap: 20px;
   margin-top: 40px;
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+
+.listSupportUkraine::-webkit-scrollbar {
+  display: none;
 }
 
 .listItemSupport {
@@ -535,4 +522,60 @@ input:checked + .slider:before {
 
 .img-foundation {
   height: 32px;
+}
+
+#go-down {
+  width: 38px;
+  height: 38px;
+  display: block;
+  background: #fff;
+  margin-left: 119px;
+  margin-top: 40px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+}
+
+#go-down:hover {
+  background: rgba(79, 46, 232, 0.4);
+}
+
+.mask {
+  width: 100%;
+  height: 100%;
+  background-color: #d0d0d0;
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  transition: 0.6s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  width: 75px;
+  height: 75px;
+  border: 10px solid rgba(79, 46, 232, 0.6);
+  border-radius: 50%;
+  border-left-color: rgb(79, 46, 232);
+  animation: loader 1.3s linear infinite;
+}
+
+@keyframes loader {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.hide {
+  opacity: 0;
+}
+
+@media screen and (max-width: 450px) {
+  .containerFlex {
+    flex-wrap: wrap;
+  }
+  .itemsBooksOfCategory {
+    flex-wrap: nowrap;
+  }
 }/*# sourceMappingURL=index.css.map */
