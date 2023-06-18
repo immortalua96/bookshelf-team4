@@ -4,4 +4,5 @@ export const refs = {
   inputSwitch: document.getElementById('switchMode'),
   mainPage: document.getElementById('mainPage'),
   ScrUpButton: document.getElementById('scrollUpBtn'),
+  popup: document.querySelector('.popup'),
 };
