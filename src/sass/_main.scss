@@ -101,6 +101,12 @@
 }
 .listOneCategoruBooks {
   display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.bookItemLI {
+width: 180px;
 }
 
 .containerFlex {

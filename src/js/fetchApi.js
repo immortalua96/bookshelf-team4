@@ -9,7 +9,6 @@ export async function fetchCategories() {
   try {
     const response = await axios.get(`${CATEGORIES_URL}`);
     const data = response.data;
-    console.log(data);
     return data;
   } catch (error) {
     console.log(error.message);
