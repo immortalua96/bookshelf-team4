@@ -220,10 +220,12 @@ function renderEmpty() {
       <p class="emptyText">
         This page is empty, add some books and proceed to order.
       </p>
-      <img class="emptyImg" src="/10.48ab74dc.png" alt="" />
+      <img class="emptyImg" src = "erfewfewfwefwerferf" alt="" />
     </div>`;
-
   shoppingList.innerHTML = markup;
+  const startImg = document.querySelector('.emptyImg');
+
+  startImg.src = '../images/mainbooks.png';
 }
 
 if (books.length === 0) {
