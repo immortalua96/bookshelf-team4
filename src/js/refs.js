@@ -3,5 +3,6 @@ export const refs = {
   listSuportUkraine: document.getElementById('jsListSuportUkraine'),
   inputSwitch: document.getElementById('switchMode'),
   mainPage: document.getElementById('mainPage'),
-  ScrUpButton: document.getElementById('scrollUpBtn'),
+  ScrDownBtn: document.getElementById('go-down'),
+  // itemSupportUkraine: document.querySelector('.listItemSupport')
 };

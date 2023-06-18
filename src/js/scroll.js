@@ -18,3 +18,15 @@ $(function() {
    $(function() {
     $("#go-top").scrollToTop();
    });
+
+
+   refs.ScrDownBtn.addEventListener('click', onScrollSmooth)
+   
+   function onScrollSmooth () { 
+    const { height: cardHeight } = refs.listSuportUkraine.firstElementChild.getBoundingClientRect();
+    
+   refs.listSuportUkraine.scrollBy({
+      top: cardHeight * 2,
+      behavior: "smooth",
+    });
+    }

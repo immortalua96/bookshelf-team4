@@ -3,7 +3,7 @@ import './js/sideBar/renderListSupportUkraine';
 import './js/header';
 import './js/refs';
 import './js/sideBar/main/renderBestBooks';
-import './js/scrollUp';
+import './js/scroll';
 import './js/sideBar/main/onClickItemsOneCategory';
 import './js/openModalBook';
 import './js/loader';

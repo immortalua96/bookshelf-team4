@@ -1,5 +1,9 @@
 import { refs } from '../refs';
 import supportUkraine from '../supportUkraine.json';
+import imagesSupportUkr from '../../images/supportUkr/1.png';
+
+console.log(imagesSupportUkr);
+
 function renderListSupportUkraine(data) {
 
 let i = 0;

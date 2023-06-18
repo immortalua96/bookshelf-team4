@@ -2,7 +2,9 @@
 @import './base/reset';
 @import './base/root';
 @import './base/base';
-@import './_header';
+@import './base/loader';
+@import './base/support';
+@import './header';
 @import './main';
 @import './sideBar';
-@import './base/loader';
+@import './shopingList'
