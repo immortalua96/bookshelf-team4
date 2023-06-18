@@ -4,5 +4,5 @@ export const refs = {
   inputSwitch: document.querySelector('.darkSwitch'),
   mainPage: document.getElementById('mainPage'),
   ScrUpButton: document.getElementById('scrollUpBtn'),
-
+  popup: document.querySelector('.popup'),
 };
