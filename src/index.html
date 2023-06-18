@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
@@ -11,20 +12,26 @@
       rel="stylesheet"
     />
 
-    <link href="./sass/index.scss" rel="stylesheet" />
+
+    <link href="./sass/index.scss" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   </head>
   <body>
+    <div class="mask">
+      <div class="loader"></div>
+    </div>
     <include src="./partials/header.html"></include>
     <div class="container containerFlex">
       <include src="./partials/sideBar.html"></include>
       <include src="./partials/main.html"></include>
+      <include src="./partials/openModalBook.html"></include>
     </div>
 
-    <button id="scrollUpBtn" title="Go to top">
+    <a id="go-top" title="Go to top">
       <svg width="24" height="24">
-        <use href="./icons/symbol-defs.svg#icon-arrow-Up"></use>
+      <use href="./icons/symbol-defs.svg#icon-arrow-Up"></use>
       </svg>
-    </button>
+    </a>
 
     <script src="./index.js" type="module"></script>
   </body>

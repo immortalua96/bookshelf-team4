@@ -34,7 +34,7 @@ const books = [
   //     author: 'Ann Napolitano',
   //   },
 ];
-
+import '../images/10.png';
 const refs = {
   shoppingList: document.querySelector('.ShoppingList'),
   pagination: document.querySelector('.pagination'),
@@ -222,9 +222,12 @@ function renderEmpty() {
       <p class="emptyText">
         This page is empty, add some books and proceed to order.
       </p>
-      <img class="emptyImg" src="${defaultImage}" alt="" />
-    </div>`;
 
+      <img class="emptyImg" src="${defaultImage}" alt="" />
+
+ 
+
+    </div>`;
   shoppingList.innerHTML = markup;
 }
 
