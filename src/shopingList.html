@@ -5,9 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shopping list</title>
     <link rel="stylesheet" href="./sass/index.scss" />
+    <link rel="stylesheet" href="./sass/_shopingList.scss" />
     <script type="module" src="./index.js"></script>
   </head>
   <body>
     <include src="./partials/header.html"></include>
+
+    <div class="container containerFlex">
+      <div class="shoppingListContent">
+        <div class="fieldSupportUkraine">
+          <div class="nameSupportUkraine">
+            <h2 class="titleSupportUkraine">Support Ukraine</h2>
+            <svg width="20" height="32">
+              <use href="./icons/symbol-defs.svg#icon-Ukraine"></use>
+            </svg>
+          </div>
+          <ul class="listSuportUkraine" id="jsListSuportUkraine"></ul>
+        </div>
+        <div class="shoppingListBox">
+          <h1 class="shoppingTitle">
+            Shopping <span class="shoppingTitleSpan">List</span>
+          </h1>
+          <div class="booksBox">
+            <ul class="ShoppingList"></ul>
+          </div>
+          <div class="pagination"></div>
+        </div>
+      </div>
+      <img src="./images/10.png" alt="" style="display: none" />
+    </div>
+    <script src="./js/shopingList.js"></script>
   </body>
 </html>
