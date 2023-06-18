@@ -6,4 +6,6 @@ export const refs = {
   // ScrUpButton: document.getElementById('scrollUpBtn'),
   itemSupportUkraine: document.querySelector('listItemSupport'),
   scrDownBtn: document.getElementById('go-down')
+  ScrUpButton: document.getElementById('scrollUpBtn'),
+  popup: document.querySelector('.popup'),
 };
