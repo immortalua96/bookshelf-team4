@@ -5,8 +5,6 @@ import imagesSupportUkr from '../../images/supportUkr/1.png';
 console.log(imagesSupportUkr);
 
 function renderListSupportUkraine(data) {
-
-function renderListSupportUkraine(data) {
   let i = 0;
   const markup = data
     .map(
