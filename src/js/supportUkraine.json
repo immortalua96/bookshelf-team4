@@ -2,12 +2,12 @@
   {
     "title": "Save the Children",
     "url": "https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis",
-    "img": ".//images/1.png"
+    "img": null
   },
   {
     "title": "Project HOPE",
     "url": "https://www.projecthope.org/country/ukraine/",
-    "img": "../src/images/2.png"
+    "img": null
   },
   {
     "title": "UNITED24",
