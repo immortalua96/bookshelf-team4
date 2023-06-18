@@ -8,9 +8,4 @@ export const refs = {
   openModalBtn: document.querySelector('[data-modal]'),
   closeModalBtn: document.querySelector('[data-modal-close]'),
   modal: document.querySelector('.renderModal'),
-  // cardTitle:document.querySelector('cardTitle'),
-  // cardAuthor:document.querySelector('cardAuthor'),
-  // cardDescription:document.querySelector('cardDescription'),
-  // oneBookImg:document.querySelector('oneBookImg'),
-  // addShoppingList:document.querySelector('addShoppingList'),
 };
