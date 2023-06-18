@@ -19,6 +19,7 @@ $(function () {
   $('#go-top').scrollToTop();
 });
 
+
 refs.scrDownBtn.addEventListener('click', onScrollSmooth);
 
 function onScrollSmooth() {
@@ -30,3 +31,4 @@ function onScrollSmooth() {
     behavior: 'smooth',
   });
 }
+
