@@ -1,3 +1,5 @@
+import defaultImage from '../images/10.png';
+
 const books = [
   //   {
   //     img: '',
@@ -220,7 +222,7 @@ function renderEmpty() {
       <p class="emptyText">
         This page is empty, add some books and proceed to order.
       </p>
-      <img class="emptyImg" src="/10.48ab74dc.png" alt="" />
+      <img class="emptyImg" src="${defaultImage}" alt="" />
     </div>`;
 
   shoppingList.innerHTML = markup;
