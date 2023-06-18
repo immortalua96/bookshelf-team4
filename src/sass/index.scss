@@ -2,8 +2,12 @@
 @import './base/reset';
 @import './base/root';
 @import './base/base';
-@import './_header';
+@import './base/loader';
+@import './base/support';
+@import './header';
 @import './main';
 @import './sideBar';
+@import './shopingList';
+@import './openModalBook';
 @import './base/loader';
 //@import './media/_shopingList';
