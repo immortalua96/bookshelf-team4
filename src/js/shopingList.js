@@ -34,7 +34,7 @@ const books = [
   //     author: 'Ann Napolitano',
   //   },
 ];
-
+import '../images/10.png';
 const refs = {
   shoppingList: document.querySelector('.ShoppingList'),
   pagination: document.querySelector('.pagination'),
@@ -229,9 +229,6 @@ function renderEmpty() {
 
     </div>`;
   shoppingList.innerHTML = markup;
-  const startImg = document.querySelector('.emptyImg');
-
-  startImg.src = '../images/mainbooks.png';
 }
 
 if (books.length === 0) {
