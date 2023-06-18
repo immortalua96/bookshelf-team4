@@ -27,14 +27,13 @@ export async function onClickItemsOneCategory(ev) {
     listOneGategory.classList.add('listOneCategoruBooks');
 
     refs.mainPage.append(headOneGategory, listOneGategory);
-    console.log(data);
 
     const markup = data
       .map(
         ({ _id, title, book_image, author }) =>
           `
       <li class="bookItemLI">
-        <img src="${book_image}" alt="${title}" class="book_image" id = "${_id}">
+        <img src="${book_image}" alt="${title}" class="book_image" data-id=${_id}>
           <h3 class="book_title">${title}</h3>
           <p class="book_author">${author}</p></li>
         <li>
