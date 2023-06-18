@@ -5,11 +5,10 @@ function renderListSupportUkraine(data) {
 let i = 0;
    const markup = data
   .map(
-    ({ title, url, img }) => 
-            `<li class="listItemSupport"><p class="counterPoint">${addLeadingZero(i+=1)}</p><a href=${url} target="_blank" rel="noopener noreferrer"><img class="img-foundation" src="${img}" alt="${title} "></a></li>`
-    )
+    ({ title, url, img }) =>
+      `<li class="listItemSupport"><p class="counterPoint">${addLeadingZero(i+=1)}</p><a href=${url} target="_blank" rel="noopener noreferrer"><img class="img-foundation" src=".//images/${i}.png " alt="${title} "></a></li>`    )
           .join('');
-  refs.listSuportUkraine.insertAdjacentHTML('beforeend', markup);
+  refs.listSupportUkraine.insertAdjacentHTML('beforeend', markup);
 }
 renderListSupportUkraine(supportUkraine);
 

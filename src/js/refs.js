@@ -1,8 +1,8 @@
 export const refs = {
   listCategories: document.getElementById('jsListCategories'),
-  listSuportUkraine: document.getElementById('jsListSuportUkraine'),
+  listSupportUkraine: document.getElementById('jsListSupportUkraine'),
   inputSwitch: document.querySelector('.darkSwitch'),
   mainPage: document.getElementById('mainPage'),
-  ScrUpButton: document.getElementById('scrollUpBtn'),
+  ScrDownButton: document.getElementById('#go-down'),
 
 };
