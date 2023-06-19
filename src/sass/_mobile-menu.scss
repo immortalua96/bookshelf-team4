@@ -1,0 +1,118 @@
+.mobile-menu {
+    // width: 375px;
+  z-index: 20;
+  overflow: hidden;
+  position: fixed;
+  background-image: radial-gradient(183.6% 183.01% at 59.76% -23.42%,#4f2ee8 18.03%,#fff 100%);
+  top: 0;
+  left: 0;
+  height: 100vh;
+  transform: translateX(100%);
+  transition: transform 250ms ease-in-out;
+  @media (min-width: 375px) {
+    padding: 200px 130px 350px;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile-menu  {
+  display: none;
+}
+ }
+
+ @media (min-width: 1440px) {
+.mobile-menu  {
+  display: none;
+}
+}
+
+.mobile-menu .container {
+  padding: 0px;
+}
+
+.mobile-menu.is-open {
+  transform: translateX(0);
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+  .header {
+    position: fixed;
+  }
+}
+
+.mobile-menu__thumb {
+  padding-top: 40px;
+  padding-left: 0px;
+}
+
+.mobile-menu__item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  
+}
+.mobile-menu__link {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+  padding-left: 3px;
+  fill: #fff;
+  color: #fff;
+  gap: 8px;
+}
+
+.mobile-menu__img {
+  top: 66%;
+  left: 0%;
+  position: absolute;
+  z-index: -1;
+  min-width: 280px;
+  max-width: 280px;
+  width: 100%;
+  max-width: 100%;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+}
+
+.nav__item--current {
+  color: #111;
+  background: #eac645;
+  border-radius: 36px;
+  margin-bottom: 16px;
+  padding: 8px 16px;
+  font-weight: 700;
+}
+
+.burgerBtn {
+    z-index: 2;
+    cursor: pointer;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    color: #111;
+    background-color: #fff;
+    border: 2.3px solid #111;
+    border-radius: 18px;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.3;
+    display: flex;
+    position: fixed;
+    bottom: 20px;
+    margin-left: -90px;
+}
+
+.arrowIcon {
+    width: 20px;
+    height: 20px;
+    margin-left: 9px;
+}

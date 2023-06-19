@@ -7,3 +7,4 @@ import './js/scroll';
 import './js/sideBar/main/onClickItemsOneCategory';
 import './js/openModalBook';
 import './js/loader';
+import './js/mobile-menu';
