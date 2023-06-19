@@ -16,7 +16,7 @@ let imgArray = [imgSupUkr1, imgSupUkr2, imgSupUkr3, imgSupUkr4, imgSupUkr5, imgS
       markup = data
     .map(({ url, title }, index) => {
       return `<li class="listItemSupport"><p class="counterPoint">${addLeadingZero(index + 1)}</p><a href=${url} target="_blank" rel="noopener noreferrer"><img class="img-foundation" src="${
-        imgArray[index]}" alt="${title} "></a></li>`;
+        imgArray[index]}" alt="${title}"></a></li>`;
     })
     .join('');
     refs.listSuportUkraine.insertAdjacentHTML('beforeend', markup); 
