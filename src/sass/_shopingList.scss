@@ -1,4 +1,4 @@
-.shoppingListContent {
+#shoppingListContent {
   margin-top: 40px;
 
   display: flex;
@@ -304,6 +304,21 @@
   background: var(--text-color-primary);
 }
 
+.paginationList {
+  max-width: 190px;
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+.paginationList::-webkit-scrollbar {
+  width: 0px;
+}
+
 .increase {
   width: 38px;
   height: 38px;
@@ -377,8 +392,8 @@
 }
 
 .emptyPaga {
-  width: 1000px;
-  height: 600px;
+  width: 900px;
+  height: 550px;
 
   display: flex;
   justify-content: center;
@@ -395,7 +410,6 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
-  /* or 133% */
 
   text-align: center;
   letter-spacing: -0.02em;
