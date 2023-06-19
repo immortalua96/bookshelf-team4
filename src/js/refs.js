@@ -6,3 +6,4 @@ export const refs = {
   scrDownBtn: document.getElementById('go-down'),
   popup: document.querySelector('.popup'),
 };
+
