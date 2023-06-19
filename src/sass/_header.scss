@@ -27,10 +27,15 @@
   height: 24px;
   isolation: isolate;
 }
+.logoBookshelf{
+  width: 77px;
+  height:auto;
+}
 .logoText {
   width: 77px;
   color: #000000;
   line-height: 18px;
+  font-weight: 700;
 }
 .headerNav {
   display: flex;
@@ -184,7 +189,7 @@ input:checked + .slider:before {
   justify-content: space-between;
   align-items: center;
   padding: 0px;
-  gap: 90px;
+
   isolation: isolate;
 }
 .userSpan {
@@ -212,9 +217,9 @@ input:checked + .slider:before {
   margin-top: 14px;
   margin-bottom: 14px;
 }
-.imgAmazon {
+.amazonLogo {
   width: 200px;
-  height: auto;
-  fill: #111111;
+  height: 100px;
+  fill: red;
   // isolation: isolate;
 }
