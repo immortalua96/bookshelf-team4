@@ -1,46 +1,173 @@
 import defaultImage from '../images/10.png';
 
 const books = [
-  //   {
-  //     img: '',
-  //     name: 'WONDER',
-  //     artisticDirection: 'Hardcover fiction',
-  //     description:
-  //       'August Pullman was born with a facial difference that, up until now, has prevented him from going to a mainstream school. Starting 5th grade at Beecher Prep, he wants nothing more than to be treated as an ordinary kid—but his new classmates can’t get past Auggie’s extraordinary face. ',
-  //     author: 'R.J. Palacio',
-  //   },
-  //   {
-  //     img: '',
-  //     name: 'DAISY JONES & THE SIX',
-  //     artisticDirection: 'Combined  Print and E-Book Fiction',
-  //     description:
-  //       'For a while, Daisy Jones & The Six were everywhere. Their albums were on every turntable, they sold out arenas from coast to coast, their sound defined an era. And then, on 12 July 1979, they split. Nobody ever knew why. Until now. They were lovers and friends and brothers and rivals.',
-  //     author: 'Taylor Jenkins Reid',
-  //   },
-  //   {
-  //     img: '',
-  //     name: 'I will find you',
-  //     artisticDirection: 'Hardcover fiction',
-  //     description:
-  //       'David Burroughs was once a devoted father to his three-year-old son Matthew, living a dream life just a short drive away from the working-class suburb where he and his wife, Cheryl, first fell in love--until one fateful night when David woke suddenly to discover Matthew had been murdered while David was asleep just down the hall.',
-  //     author: 'Harlan Coben',
-  //   },
-  //   {
-  //     img: '',
-  //     name: 'Hardcover fiction',
-  //     artisticDirection: 'Combined Print and E-Book Fiction',
-  //     description:
-  //       'In a homage to Louisa May Alcott’s “Little Women,” a young man’s dark past resurfaces as he gets to the know the family of his college sweetheart.',
-  //     author: 'Ann Napolitano',
-  //   },
+  // {
+  //   img: '',
+  //   name: 'WONDER',
+  //   artisticDirection: 'Hardcover fiction',
+  //   description:
+  //     'August Pullman was born with a facial difference that, up until now, has prevented him from going to a mainstream school. Starting 5th grade at Beecher Prep, he wants nothing more than to be treated as an ordinary kid—but his new classmates can’t get past Auggie’s extraordinary face. ',
+  //   author: 'R.J. Palacio',
+  // },
+  // {
+  //   img: '',
+  //   name: 'DAISY JONES & THE SIX',
+  //   artisticDirection: 'Combined  Print and E-Book Fiction',
+  //   description:
+  //     'For a while, Daisy Jones & The Six were everywhere. Their albums were on every turntable, they sold out arenas from coast to coast, their sound defined an era. And then, on 12 July 1979, they split. Nobody ever knew why. Until now. They were lovers and friends and brothers and rivals.',
+  //   author: 'Taylor Jenkins Reid',
+  // },
+  // {
+  //   img: '',
+  //   name: 'I will find you',
+  //   artisticDirection: 'Hardcover fiction',
+  //   description:
+  //     'David Burroughs was once a devoted father to his three-year-old son Matthew, living a dream life just a short drive away from the working-class suburb where he and his wife, Cheryl, first fell in love--until one fateful night when David woke suddenly to discover Matthew had been murdered while David was asleep just down the hall.',
+  //   author: 'Harlan Coben',
+  // },
+  // {
+  //   img: '',
+  //   name: 'I will find you',
+  //   artisticDirection: 'Hardcover fiction',
+  //   description:
+  //     'David Burroughs was once a devoted father to his three-year-old son Matthew, living a dream life just a short drive away from the working-class suburb where he and his wife, Cheryl, first fell in love--until one fateful night when David woke suddenly to discover Matthew had been murdered while David was asleep just down the hall.',
+  //   author: 'Harlan Coben',
+  // },
+  // {
+  //   img: '',
+  //   name: 'I will find you',
+  //   artisticDirection: 'Hardcover fiction',
+  //   description:
+  //     'David Burroughs was once a devoted father to his three-year-old son Matthew, living a dream life just a short drive away from the working-class suburb where he and his wife, Cheryl, first fell in love--until one fateful night when David woke suddenly to discover Matthew had been murdered while David was asleep just down the hall.',
+  //   author: 'Harlan Coben',
+  // },
+  // {
+  //   img: '',
+  //   name: 'I will find you',
+  //   artisticDirection: 'Hardcover fiction',
+  //   description:
+  //     'David Burroughs was once a devoted father to his three-year-old son Matthew, living a dream life just a short drive away from the working-class suburb where he and his wife, Cheryl, first fell in love--until one fateful night when David woke suddenly to discover Matthew had been murdered while David was asleep just down the hall.',
+  //   author: 'Harlan Coben',
+  // },
+  // {
+  //   img: '',
+  //   name: 'I will find you',
+  //   artisticDirection: 'Hardcover fiction',
+  //   description:
+  //     'David Burroughs was once a devoted father to his three-year-old son Matthew, living a dream life just a short drive away from the working-class suburb where he and his wife, Cheryl, first fell in love--until one fateful night when David woke suddenly to discover Matthew had been murdered while David was asleep just down the hall.',
+  //   author: 'Harlan Coben',
+  // },
+  // {
+  //   img: '',
+  //   name: 'I will find you',
+  //   artisticDirection: 'Hardcover fiction',
+  //   description:
+  //     'David Burroughs was once a devoted father to his three-year-old son Matthew, living a dream life just a short drive away from the working-class suburb where he and his wife, Cheryl, first fell in love--until one fateful night when David woke suddenly to discover Matthew had been murdered while David was asleep just down the hall.',
+  //   author: 'Harlan Coben',
+  // },
+  // {
+  //   img: '',
+  //   name: 'I will find you',
+  //   artisticDirection: 'Hardcover fiction',
+  //   description:
+  //     'David Burroughs was once a devoted father to his three-year-old son Matthew, living a dream life just a short drive away from the working-class suburb where he and his wife, Cheryl, first fell in love--until one fateful night when David woke suddenly to discover Matthew had been murdered while David was asleep just down the hall.',
+  //   author: '.........Harlan Coben',
+  // },
+  // {
+  //   img: '',
+  //   name: '12342354435I will find you',
+  //   artisticDirection: 'Hardcover fiction',
+  //   description:
+  //     'David Burroughs was once a devoted father to his three-year-old son Matthew, living a dream life just a short drive away from the working-class suburb where he and his wife, Cheryl, first fell in love--until one fateful night when David woke suddenly to discover Matthew had been murdered while David was asleep just down the hall.',
+  //   author: 'Harlan Coben',
+  // },
+  // {
+  //   img: '',
+  //   name: 'I will find you',
+  //   artisticDirection: 'щйц9кHardcover fiction',
+  //   description:
+  //     'David Burroughs was once a devoted father to his three-year-old son Matthew, living a dream life just a short drive away from the working-class suburb where he and his wife, Cheryl, first fell in love--until one fateful night when David woke suddenly to discover Matthew had been murdered while David was asleep just down the hall.',
+  //   author: 'Harlan Coben',
+  // },
+  // {
+  //   img: '',
+  //   name: 'I will find you',
+  //   artisticDirection: 'Hardcover fiction',
+  //   description:
+  //     'David Burroughs was once a devoted father to his three-year-old son Matthew, living a dream life just a short drive away from the working-class suburb where he and his wife, Cheryl, first fell in love--until one fateful night when David woke suddenly to discover Matthew had been murdered while David was asleep just down the hall.',
+  //   author: '.........Harlan Coben',
+  // },
+  // {
+  //   img: '',
+  //   name: '12342354435I will find you',
+  //   artisticDirection: 'Hardcover fiction',
+  //   description:
+  //     'David Burroughs was once a devoted father to his three-year-old son Matthew, living a dream life just a short drive away from the working-class suburb where he and his wife, Cheryl, first fell in love--until one fateful night when David woke suddenly to discover Matthew had been murdered while David was asleep just down the hall.',
+  //   author: 'Harlan Coben',
+  // },
+  // {
+  //   img: '',
+  //   name: 'I will find you',
+  //   artisticDirection: 'щйц9кHardcover fiction',
+  //   description:
+  //     'David Burroughs was once a devoted father to his three-year-old son Matthew, living a dream life just a short drive away from the working-class suburb where he and his wife, Cheryl, first fell in love--until one fateful night when David woke suddenly to discover Matthew had been murdered while David was asleep just down the hall.',
+  //   author: 'Harlan Coben',
+  // },
+  // {
+  //   img: '',
+  //   name: 'I will find you',
+  //   artisticDirection: 'Hardcover fiction',
+  //   description:
+  //     'David Burroughs was once a devoted father to his three-year-old son Matthew, living a dream life just a short drive away from the working-class suburb where he and his wife, Cheryl, first fell in love--until one fateful night when David woke suddenly to discover Matthew had been murdered while David was asleep just down the hall.',
+  //   author: '.........Harlan Coben',
+  // },
+  // {
+  //   img: '',
+  //   name: '12342354435I will find you',
+  //   artisticDirection: 'Hardcover fiction',
+  //   description:
+  //     'David Burroughs was once a devoted father to his three-year-old son Matthew, living a dream life just a short drive away from the working-class suburb where he and his wife, Cheryl, first fell in love--until one fateful night when David woke suddenly to discover Matthew had been murdered while David was asleep just down the hall.',
+  //   author: 'Harlan Coben',
+  // },
+  // {
+  //   img: '',
+  //   name: 'I will find you',
+  //   artisticDirection: 'щйц9кHardcover fiction',
+  //   description:
+  //     'David Burroughs was once a devoted father to his three-year-old son Matthew, living a dream life just a short drive away from the working-class suburb where he and his wife, Cheryl, first fell in love--until one fateful night when David woke suddenly to discover Matthew had been murdered while David was asleep just down the hall.',
+  //   author: 'Harlan Coben',
+  // },
 ];
 import '../images/10.png';
+
+const shoppingListContent = document.querySelector('#shoppingListContent');
+
+function renderPaginationMarkkup() {
+  const markup = ` <div class="shoppingListBox">
+  <h1 class="shoppingTitle">
+            Shopping <span class="shoppingTitleSpan">List</span>
+          </h1>
+  <div class="booksBox">
+            <ul class="ShoppingList"></ul>
+             <div class="pagination">
+            <ul class="paginationList">
+
+            </ul>
+          </div>
+          </div>
+          </div>`;
+  shoppingListContent.insertAdjacentHTML('beforeend', markup);
+}
+
+renderPaginationMarkkup();
+
 const refs = {
   shoppingList: document.querySelector('.ShoppingList'),
   pagination: document.querySelector('.pagination'),
+  paginationList: document.querySelector('.paginationList'),
 };
 
-const { shoppingList, pagination } = refs;
+const { shoppingList, pagination, paginationList } = refs;
 
 const booksPerPage = 3;
 let currentPage = 1;
@@ -77,13 +204,13 @@ function renderPagination(books) {
 
   for (let i = 1; i <= totalPages; i += 1) {
     if (i === currentPage) {
-      paginationMarkup += `<button class="paginationButton paginationButtonCurrent">${i}</button>`;
+      paginationMarkup += `<li><button class="paginationButton paginationButtonCurrent">${i}</button></li>`;
     } else {
-      paginationMarkup += `<button class="paginationButton">${i}</button>`;
+      paginationMarkup += `<li><button class="paginationButton">${i}</button></li>`;
     }
   }
 
-  pagination.innerHTML = paginationMarkup;
+  paginationList.innerHTML = paginationMarkup;
 
   if (books.length >= 2) {
     pagination.insertAdjacentHTML('beforeend', next);
@@ -112,7 +239,6 @@ function renderPagination(books) {
   const reductionButton = document.querySelector('.reduction');
   const doubleIncreaseButton = document.querySelector('.doubleIncrease');
   const doubleReductionButton = document.querySelector('.doubleReduction');
-
   increaseButton.addEventListener('click', () => {
     if (currentPage < totalPages) {
       currentPage += 1;
@@ -122,6 +248,24 @@ function renderPagination(books) {
 
       renderBooks(booksToRender);
       selectsActive(paginationButtons[currentPage - 1]);
+
+      reductionButton.disabled = false;
+      if (currentPage === totalPages) {
+        increaseButton.disabled = true;
+      }
+
+      const currentButton = paginationButtons[currentPage - 1];
+      const currentButtonRect = currentButton.getBoundingClientRect();
+      const paginationRect = paginationList.getBoundingClientRect();
+      const currentButtonLeft = currentButtonRect.left - paginationRect.left;
+      const currentButtonRight = currentButtonRect.right - paginationRect.left;
+
+      if (currentButtonRight > paginationList.offsetWidth) {
+        paginationList.scrollLeft +=
+          currentButtonRight - paginationList.offsetWidth;
+      } else if (currentButtonLeft < 0) {
+        paginationList.scrollLeft += currentButtonLeft;
+      }
     }
   });
 
@@ -134,30 +278,89 @@ function renderPagination(books) {
 
       renderBooks(booksToRender);
       selectsActive(paginationButtons[currentPage - 1]);
+
+      increaseButton.disabled = false;
+      if (currentPage === 1) {
+        reductionButton.disabled = true;
+      }
+
+      const currentButton = paginationButtons[currentPage - 1];
+      const currentButtonRect = currentButton.getBoundingClientRect();
+      const paginationRect = paginationList.getBoundingClientRect();
+      const currentButtonLeft = currentButtonRect.left - paginationRect.left;
+      const currentButtonRight = currentButtonRect.right - paginationRect.left;
+
+      if (currentButtonLeft < 0) {
+        paginationList.scrollLeft += currentButtonLeft;
+      } else if (currentButtonRight > paginationList.offsetWidth) {
+        paginationList.scrollLeft +=
+          currentButtonRight - paginationList.offsetWidth;
+      }
     }
   });
-
   doubleIncreaseButton.addEventListener('click', () => {
-    if (currentPage < totalPages - 1) {
+    if (currentPage < totalPages) {
       currentPage += 2;
+      if (currentPage > totalPages) {
+        currentPage = totalPages;
+      }
       const startIndex = (currentPage - 1) * booksPerPage;
       const endIndex = startIndex + booksPerPage;
       const booksToRender = books.slice(startIndex, endIndex);
 
       renderBooks(booksToRender);
       selectsActive(paginationButtons[currentPage - 1]);
+
+      reductionButton.disabled = false;
+      if (currentPage === totalPages) {
+        increaseButton.disabled = true;
+      }
+
+      const currentButton = paginationButtons[currentPage - 1];
+      const currentButtonRect = currentButton.getBoundingClientRect();
+      const paginationRect = paginationList.getBoundingClientRect();
+      const currentButtonLeft = currentButtonRect.left - paginationRect.left;
+      const currentButtonRight = currentButtonRect.right - paginationRect.left;
+
+      if (currentButtonRight > paginationList.offsetWidth) {
+        paginationList.scrollLeft +=
+          currentButtonRight - paginationList.offsetWidth;
+      } else if (currentButtonLeft < 0) {
+        paginationList.scrollLeft += currentButtonLeft;
+      }
     }
   });
 
   doubleReductionButton.addEventListener('click', () => {
-    if (currentPage > 2) {
+    if (currentPage > 1) {
       currentPage -= 2;
+      if (currentPage < 1) {
+        currentPage = 1;
+      }
       const startIndex = (currentPage - 1) * booksPerPage;
       const endIndex = startIndex + booksPerPage;
       const booksToRender = books.slice(startIndex, endIndex);
 
       renderBooks(booksToRender);
       selectsActive(paginationButtons[currentPage - 1]);
+
+      increaseButton.disabled = false;
+      if (currentPage === 1) {
+        reductionButton.disabled = true;
+      }
+
+      const currentButton = paginationButtons[currentPage - 1];
+      const currentButtonRect = currentButton.getBoundingClientRect();
+      const paginationRect = paginationList.getBoundingClientRect();
+      const currentButtonLeft = currentButtonRect.left - paginationRect.left;
+      const currentButtonRight = currentButtonRect.right - paginationRect.left;
+
+      if (currentButtonLeft < 0) {
+        paginationList.scrollLeft += currentButtonLeft;
+      } else if (currentButtonRight > paginationList.offsetWidth) {
+        paginationList.scrollLeft +=
+          currentButtonRight - paginationList.offsetWidth;
+      }
     }
   });
 
@@ -224,8 +427,6 @@ function renderEmpty() {
       </p>
 
       <img class="emptyImg" src="${defaultImage}" alt="" />
-
- 
 
     </div>`;
   shoppingList.innerHTML = markup;

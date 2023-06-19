@@ -12,22 +12,11 @@
   <body>
     <include src="./partials/header.html"></include>
 
-    <div class="container containerFlex">
-      <div class="shoppingListContent">
-        <include src="./partials/supportUkraine.html"></include>
-        <div class="shoppingListBox">
-          <h1 class="shoppingTitle">
-            Shopping <span class="shoppingTitleSpan">List</span>
-          </h1>
-          <div class="booksBox">
-            <ul class="ShoppingList"></ul>
-          </div>
-          <div class="pagination"></div>
-        </div>
-      </div>
-
-      <!-- <img src="./images/mainbooks.png" alt="" style="display: none" /> -->
+    <div class="container containerFlex" id="shoppingListContent">
+      <include src="./partials/supportUkraine.html"></include>
     </div>
+
+
     <script src="./js/shopingList.js" type="module"></script>
     <script
       src="./js/sideBar/renderListSupportUkraine.js"
