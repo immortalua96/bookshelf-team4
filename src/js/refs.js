@@ -9,3 +9,4 @@ export const refs = {
   closeModalBtn: document.querySelector('[data-modal-close]'),
   modal: document.querySelector('.renderModal'),
 };
+

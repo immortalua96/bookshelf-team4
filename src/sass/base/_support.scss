@@ -52,9 +52,12 @@
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
+    align-items: center;
   }
   .img-foundation {
+    width: auto;
     height: 32px;
+    filter: grayscale(1) brightness(1000%);
   }
   #go-down{
     width: 38px;
@@ -66,7 +69,14 @@
     cursor: pointer; 
     padding: 8px; 
     border-radius: 50%; 
+    display: flex;
+    
   }
+
+  // #go-down svg{
+  //   display: flex;
+  //   align-items: center;
+  // }
   
   #go-down:hover {
     background: rgba(79, 46, 232, 0.4);

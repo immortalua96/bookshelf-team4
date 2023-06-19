@@ -1,21 +1,35 @@
 import { refs } from '../refs';
-import supportUkraine from '../supportUkraine.json';
-import imagesSupportUkr from '../../images/supportUkr/1.png';
+import imgSupUkr1 from '/src/images/supportUkr/1.png';
+import imgSupUkr2 from '/src/images/supportUkr/2.png';
+import imgSupUkr3 from '/src/images/supportUkr/3.png';
+import imgSupUkr4 from '/src/images/supportUkr/4.png';
+import imgSupUkr5 from '/src/images/supportUkr/5.png';
+import imgSupUkr6 from '/src/images/supportUkr/6.png';
+import imgSupUkr7 from '/src/images/supportUkr/7.png';
+import imgSupUkr8 from '/src/images/supportUkr/8.png';
+import imgSupUkr9 from '/src/images/supportUkr/9.png';
 
-console.log(imagesSupportUkr);
+import supportUkraine from '../supportUkraine'
 
 function renderListSupportUkraine(data) {
-  let i = 0;
-  const markup = data
-    .map(
-      ({ title, url, img }) =>
-        `<li class="listItemSupport"><p class="counterPoint">${addLeadingZero(
-          (i += 1)
-        )}</p><a href=${url} target="_blank" rel="noopener noreferrer"><img class="img-foundation" src="${img}" alt="${title} "></a></li>`
-    )
-    .join('');
-  refs.listSuportUkraine.insertAdjacentHTML('beforeend', markup);
-}
+let imgArray = [imgSupUkr1, imgSupUkr2, imgSupUkr3, imgSupUkr4, imgSupUkr5, imgSupUkr6, imgSupUkr7, imgSupUkr8, imgSupUkr9]; 
+let markup = "";
+for(let i = 0; i < imgArray.length; i+=1) {
+  console.log(imgArray[i]);
+  console.log(imgArray.length);
+  let c = 0;
+  markup = data
+      .map(
+        ({ title, url }) =>
+          `<li class="listItemSupport"><p class="counterPoint">${addLeadingZero(c += 1)}</p><a href=${url} target="_blank" rel="noopener noreferrer"><img class="img-foundation" src="${imgArray[i]}" alt="${title} "></a></li>`
+      )
+      .join('');
+      
+      console.log(imgArray[i]);
+    }
+refs.listSuportUkraine.insertAdjacentHTML('beforeend', markup); 
+      }
+
 renderListSupportUkraine(supportUkraine);
 
 function addLeadingZero(value) {
