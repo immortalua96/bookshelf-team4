@@ -5,5 +5,8 @@ export const refs = {
   mainPage: document.getElementById('mainPage'),
   scrDownBtn: document.getElementById('go-down'),
   popup: document.querySelector('.popup'),
+  openModalBtn: document.querySelector('[data-modal]'),
+  closeModalBtn: document.querySelector('[data-modal-close]'),
+  modal: document.querySelector('.renderModal'),
 };
 
