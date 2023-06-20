@@ -1,4 +1,4 @@
-export function reverseOneModalBook(url,author,title,description) {
+export function reverseOneModalBook(url, author, title, description) {
   return `<div>
   <img class="oneBookImg" 
     src="${url}"
@@ -12,5 +12,5 @@ export function reverseOneModalBook(url,author,title,description) {
   </p>
 
   <button class="addShoppingList">Add to Shopping List</button>
-</div>`
+</div>`;
 }
