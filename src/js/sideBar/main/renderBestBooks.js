@@ -40,8 +40,8 @@ export async function renderBestBooks() {
 
   refs.mainPage.insertAdjacentHTML('beforeend', markup);}
   catch (error) {
-    error => {Report.failure("Something went wrong", "Please, reload the current page.", "Okay")
+    Report.failure("Something went wrong", "Please, reload the current page.", "Okay")
     console.log(error)};
   } 
-}
+
 renderBestBooks();

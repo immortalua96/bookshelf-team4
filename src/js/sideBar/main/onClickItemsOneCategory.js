@@ -49,7 +49,7 @@ export async function onClickItemsOneCategory(ev) {
       renderBestBooks();
     }
   } catch (error) {
-    error => {Report.failure("Searching Failure", "Sorry, there are no books matching the chosen category. Please try again.", "Okay")
-    console.log(error)};
+    Report.failure("Searching Failure", "Sorry, there are no books matching the chosen category. Please try again.", "Okay")
+    console.log(errorMsg)};
   }
-}
+
