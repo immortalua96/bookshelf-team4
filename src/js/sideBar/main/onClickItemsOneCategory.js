@@ -3,21 +3,24 @@ import { renderListCategories } from '../renderListCategories';
 import { clearMain } from './clearMain';
 import { fetchGategoryBooks } from '../../fetchApi';
 import { renderBestBooks } from './renderBestBooks';
+import { Report } from 'notiflix/build/notiflix-report-aio';
 
 renderListCategories();
 refs.listCategories.addEventListener('click', onClickItemsOneCategory);
+
 export async function onClickItemsOneCategory(ev) {
+  const prevActive = document.querySelector('.currentActiveLi');
+  ev.target.classList.add('currentActiveLi');
+  if (prevActive) {
+    prevActive.classList.remove('currentActiveLi');
+  }
   try {
     if (
       ev.target.nodeName === 'LI' &&
       ev.target.textContent !== 'All categories'
     ) {
       clearMain();
-      const prevActive = document.querySelector('.currentActiveLi');
-      if (prevActive) {
-        prevActive.classList.remove('currentActiveLi');
-      }
-      ev.target.classList.add('currentActiveLi');
+
       const category = ev.target.textContent;
       const data = await fetchGategoryBooks(category);
 
@@ -44,10 +47,13 @@ export async function onClickItemsOneCategory(ev) {
         .join('');
       listOneGategory.insertAdjacentHTML('beforeend', markup);
     } else if (ev.target.textContent === 'All categories') {
+      ev.target.classList.add('currentActiveLi');
+
       clearMain();
       renderBestBooks();
     }
   } catch (error) {
-    console.log(error);
+    error => {Report.failure("Searching Failure", "Sorry, there are no books matching the chosen category. Please try again.", "Okay")
+    console.log(error)};
   }
 }

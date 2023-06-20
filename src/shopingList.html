@@ -6,28 +6,19 @@
     <title>Shopping list</title>
     <link type="image/svg+xml" href="/src/book.ico" rel="icon" />
     <link href="./sass/index.scss" rel="stylesheet" />
+    <link href="./sass/media/headerMedia.css" rel="stylesheet" />
+    <link href="./sass/media/shopMedia.css" rel="stylesheet"/> 
     <script src="./index.js" type="module"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   </head>
   <body>
     <include src="./partials/header.html"></include>
 
-    <div class="container containerFlex">
-      <div class="shoppingListContent">
-        <include src="./partials/supportUkraine.html"></include>
-        <div class="shoppingListBox">
-          <h1 class="shoppingTitle">
-            Shopping <span class="shoppingTitleSpan">List</span>
-          </h1>
-          <div class="booksBox">
-            <ul class="ShoppingList"></ul>
-          </div>
-          <div class="pagination"></div>
-        </div>
-      </div>
-
-      <!-- <img src="./images/mainbooks.png" alt="" style="display: none" /> -->
+    <div class="container containerFlex" id="shoppingListContent">
+      <include src="./partials/supportUkraine.html"></include>
     </div>
+
+
     <script src="./js/shopingList.js" type="module"></script>
     <script
       src="./js/sideBar/renderListSupportUkraine.js"
