@@ -1,3 +1,52 @@
+.darkmode--activated .darkmode-background {
+  background-color: #202024; /* цвет фона в тёмном режиме */
+}
+
+//добавить классы нужные + нужный цвет для текста
+.darkmode--activated li {
+  color: rgba(255, 255, 255, 0.6);
+}
+.darkmode--activated .book_author,
+.darkmode--activated .list_name {
+  color: #b4afaf;
+}
+
+.darkmode--activated h1,
+.darkmode--activated h3 {
+  color: #fff;
+}
+
+.darkmode--activated .currentActiveLi {
+  color: #eac645;
+}
+
+.darkmode--activated .itemsCategories:hover,
+.darkmode--activated .itemsCategories:focus {
+  color: #eac645;
+}
+
+.darkmode--activated .ulListCategories::-webkit-scrollbar-thumb {
+  background: radial-gradient(
+    183.6% 183.01% at 59.76% -23.42%,
+    #eac645 18.03%,
+    #ffffff 100%
+  );
+}
+
+.darkmode--activated .flexForHeader {
+  background: #111111;
+}
+
+.darkmode--activated .logoBookshelf,
+.darkmode--activated .cartHeader {
+  fill: #fff;
+}
+
+.darkmode--activated .shoppingList,
+.darkmode--activated .counterPoint {
+  color: #fff;
+}
+
 @mixin screen($size) {
   $desktop: '(min-width: 1440px)';
   $tablet: '(min-width: 768px)';
@@ -40,4 +89,3 @@
     max-width: 1440px;
   }
 }
-
