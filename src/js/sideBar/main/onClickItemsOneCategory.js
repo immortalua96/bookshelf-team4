@@ -3,6 +3,7 @@ import { renderListCategories } from '../renderListCategories';
 import { clearMain } from './clearMain';
 import { fetchGategoryBooks } from '../../fetchApi';
 import { renderBestBooks } from './renderBestBooks';
+import { Report } from 'notiflix/build/notiflix-report-aio';
 
 renderListCategories();
 refs.listCategories.addEventListener('click', onClickItemsOneCategory);
@@ -48,6 +49,7 @@ export async function onClickItemsOneCategory(ev) {
       renderBestBooks();
     }
   } catch (error) {
-    console.log(error);
+    error => {Report.failure("Searching Failure", "Sorry, there are no books matching the chosen category. Please try again.", "Okay")
+    console.log(error)};
   }
 }

@@ -1,7 +1,7 @@
 import axios from 'axios';
 const CATEGORIES_URL =
-  'https://books-backend.p.goit.global/books/category-list ';
-const BEST_URL = 'https://books-backend.p.goit.global/books/top-books ';
+  'https://books-backend.p.goit.global/books/category-list';
+const BEST_URL = 'https://books-backend.p.goit.global/books/top-books';
 const ONE_URL_CATEGORIES =
   'https://books-backend.p.goit.global/books/category?category';
 const URL_ID = 'https://books-backend.p.goit.global/books';
