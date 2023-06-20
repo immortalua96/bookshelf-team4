@@ -1,3 +1,5 @@
+import { reverseOneModalBook } from './sideBar/main/reverseOneModalBook';
+
 export class LocalstorageBooks {
   constructor() {
     this.keyName = 'books';
@@ -34,11 +36,20 @@ export class LocalstorageBooks {
     }
   }
 
+
   updateButtonText(id, addBooksLocalstorage) {
+    const textModalInІnstructionEl = document.createElement('p');
+    textModalInІnstructionEl.classList.add('textModalInІnstructionEl');
+
+    const modalInІnstructionEl = document.querySelector('.modalInІnstruction');
+
     const books = this.getBooks();
     if (books.indexOf(id) === -1) {
+      modalInІnstructionEl.innerHTML = '';
       addBooksLocalstorage.textContent = 'Add to Shopping List';
     } else {
+      modalInІnstructionEl.innerHTML =
+        'Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.';
       addBooksLocalstorage.textContent = 'Remove from Shopping List';
     }
   }

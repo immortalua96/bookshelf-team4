@@ -3,6 +3,7 @@ import { fetchBookID } from './fetchApi';
 import { reverseOneModalBook } from './sideBar/main/reverseOneModalBook';
 import { clearModal } from './clearModal';
 import { LocalstorageBooks } from './localstorageBooks';
+import Notiflix from 'notiflix';
 
 const local = new LocalstorageBooks();
 
@@ -36,8 +37,17 @@ async function openModalBook(ev) {
 
       addBooksLocalstorage.addEventListener('click', () => {
         if (local.getBooks().indexOf(id) === -1) {
-          local.putBooks(id);
-          addBooksLocalstorage.textContent = 'Remove from Shopping List';
+          try {
+            local.putBooks(id);
+            addBooksLocalstorage.textContent = 'Remove from Shopping List';
+            Notiflix.Notify.success(
+              `${title} successfully add to the shopping list`
+            );
+          } catch (error) {
+            Notiflix.Notify.failure(
+              `${title} was not successfully added to the shopping list`
+            );
+          }
         } else {
           local.removeBook(id);
           addBooksLocalstorage.textContent = 'Add to Shopping List';
@@ -48,5 +58,3 @@ async function openModalBook(ev) {
     console.log(error);
   }
 }
-
-
