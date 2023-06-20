@@ -381,7 +381,7 @@ function renderBooks(book) {
   book.map(({ img, name, artisticDirection, description, author }) => {
     const markup = `
       <li class="shoppingItem">
-        <img class="bookImg" src="${img}" alt="" />
+        <img loading="lazy" class="bookImg" src="${img}" alt="" />
         <div class="bookInformationBox">
           <div class="scroll">
             <h2 class="bookName">${name}</h2>
@@ -426,7 +426,7 @@ function renderEmpty() {
         This page is empty, add some books and proceed to order.
       </p>
 
-      <img class="emptyImg" src="${defaultImage}" alt="" />
+      <img loading="lazy" class="emptyImg" src="${defaultImage}" alt="" />
 
     </div>`;
   shoppingList.innerHTML = markup;

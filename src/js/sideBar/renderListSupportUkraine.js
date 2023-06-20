@@ -9,26 +9,40 @@ import imgSupUkr7 from '/src/images/supportUkr/7.png';
 import imgSupUkr8 from '/src/images/supportUkr/8.png';
 import imgSupUkr9 from '/src/images/supportUkr/9.png';
 
-import supportUkraine from '../supportUkraine'
+import supportUkraine from '../supportUkraine';
 
 function renderListSupportUkraine(data) {
-let imgArray = [imgSupUkr1, imgSupUkr2, imgSupUkr3, imgSupUkr4, imgSupUkr5, imgSupUkr6, imgSupUkr7, imgSupUkr8, imgSupUkr9]; 
-let markup = "";
-for(let i = 0; i < imgArray.length; i+=1) {
-  console.log(imgArray[i]);
-  console.log(imgArray.length);
-  let c = 0;
-  markup = data
+  let imgArray = [
+    imgSupUkr1,
+    imgSupUkr2,
+    imgSupUkr3,
+    imgSupUkr4,
+    imgSupUkr5,
+    imgSupUkr6,
+    imgSupUkr7,
+    imgSupUkr8,
+    imgSupUkr9,
+  ];
+  let markup = '';
+  for (let i = 0; i < imgArray.length; i += 1) {
+    console.log(imgArray[i]);
+    console.log(imgArray.length);
+    let c = 0;
+    markup = data
       .map(
         ({ title, url }) =>
-          `<li class="listItemSupport"><p class="counterPoint">${addLeadingZero(c += 1)}</p><a href=${url} target="_blank" rel="noopener noreferrer"><img class="img-foundation" src="${imgArray[i]}" alt="${title} "></a></li>`
+          `<li class="listItemSupport"><p class="counterPoint">${addLeadingZero(
+            (c += 1)
+          )}</p><a href=${url} target="_blank" rel="noopener noreferrer"><img loading="lazy" class="img-foundation" src="${
+            imgArray[i]
+          }" alt="${title} "></a></li>`
       )
       .join('');
-      
-      console.log(imgArray[i]);
-    }
-refs.listSuportUkraine.insertAdjacentHTML('beforeend', markup); 
-      }
+
+    console.log(imgArray[i]);
+  }
+  refs.listSuportUkraine.insertAdjacentHTML('beforeend', markup);
+}
 
 renderListSupportUkraine(supportUkraine);
 
