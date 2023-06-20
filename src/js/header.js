@@ -2,6 +2,7 @@ import { refs } from './refs';
 import Darkmode from 'darkmode-js';
 
 // Инициализация страницы
+
 document.addEventListener('DOMContentLoaded', function () {
   const options = {
     bottom: '64px', // default: '32px'
@@ -25,6 +26,10 @@ document.addEventListener('DOMContentLoaded', function () {
     refs.inputSwitch.checked = true;
     darkmode.toggle();
   }
+
+  const catAllCategFirstChild =
+    refs.listCategories.querySelector('li:first-child');
+  catAllCategFirstChild.classList.add('currentActiveLi');
 });
 
 refs.inputSwitch.addEventListener('click', e => {

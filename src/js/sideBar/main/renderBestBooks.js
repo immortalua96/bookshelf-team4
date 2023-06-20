@@ -1,13 +1,13 @@
 import { refs } from '../../refs';
-import { fetchBestBooks } from '../../fetchApi';
+import { fetchBestBooks, fetchGategoryBooks } from '../../fetchApi';
 import { Report } from 'notiflix/build/notiflix-report-aio';
 
 export async function renderBestBooks() {
-  try{
+  try {
     const data = await fetchBestBooks();
     const markup = data
-    .map(
-      ({ list_name, books }) => `<ul>
+      .map(
+        ({ list_name, books }) => `<ul>
       <li>
       <h2 class="list_name">${list_name}</h2>
       <ul class="itemsBooksOfCategory">
@@ -35,8 +35,8 @@ export async function renderBestBooks() {
       <button class="see_more">see more</button>
     </li>
   </ul>`
-    )
-    .join('');
+      )
+      .join('');
 
   refs.mainPage.insertAdjacentHTML('beforeend', markup);}
   catch (error) {
