@@ -11,7 +11,7 @@
   align-items: center;
 }
 
-.mask-dark{
+.mask-dark {
   background-color: rgba(17, 17, 17, 1);
 }
 
@@ -24,7 +24,7 @@
   animation: loader 1.3s linear infinite;
 }
 
-.loader-dark{
+.loader-dark {
   border: 10px solid rgba(234, 198, 69, 0.6);
   border-left-color: rgba(234, 198, 69, 1);
 }
@@ -33,8 +33,4 @@
   100% {
     transform: rotate(360deg);
   }
-}
-
-.hide {
-  opacity: 0;
 }

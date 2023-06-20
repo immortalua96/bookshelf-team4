@@ -1,11 +1,15 @@
 import { refs } from '../../refs';
-import { fetchBestBooks } from '../../fetchApi';
+import { fetchBestBooks, fetchGategoryBooks } from '../../fetchApi';
+import { Report } from 'notiflix/build/notiflix-report-aio';
+import { addLoader,removeLoader } from '../../loader';
+
 export async function renderBestBooks() {
-  const data = await fetchBestBooks();
-  const markup = data
-    .map(
-      ({ list_name, books }) => `<ul>
-    <li>
+  try {
+    addLoader();
+    const data = await fetchBestBooks();
+    const markup = data
+      .map(
+        ({ list_name, books }) => `<div class="containerForCategory">
       <h2 class="list_name">${list_name}</h2>
       <ul class="itemsBooksOfCategory">
         <li>
@@ -29,12 +33,47 @@ export async function renderBestBooks() {
           <h3 class="book_title">${books[4].title}</h3>
           <p class="book_author">${books[4].author}</p></li>
       </ul>
-    <button class="see_more">see more</button>
-    </li>
-  </ul>`
-    )
-    .join('');
+      <button class="see_more">see more</button>
+  </div>`
+      )
+      .join('');
 
-  refs.mainPage.insertAdjacentHTML('beforeend', markup);
+    refs.mainPage.insertAdjacentHTML('beforeend', markup);
+
+    const btnsSeeMore = document.querySelectorAll('.see_more');
+
+    btnsSeeMore.forEach(btnItem => {
+      btnItem.addEventListener('click', onBtnSeeMoreClick);
+      removeLoader();
+    });
+  } catch (error) {
+    Report.failure(
+      'Something went wrong',
+      'Please, reload the current page.',
+      'Okay'
+    );
+    console.log(error);
+  }
 }
 renderBestBooks();
+
+async function onBtnSeeMoreClick(event) {
+  addLoader();
+  const categoryName = event.target.parentNode.children[0].textContent;
+  const ulRef = event.target.parentNode.children[1];
+
+  const books = await fetchGategoryBooks(categoryName);
+
+  const markup = books
+    .map(({ book_image, title, author }) => {
+      return `<li class="itemOneBook">
+        <img class="book_image" src="${book_image}" alt="">
+          <h3 class="book_title">${title}</h3>
+          <p class="book_author">${author}</p></li>`;
+    })
+    .join('');
+  ulRef.innerHTML = '';
+  ulRef.innerHTML = markup;
+  event.target.style.display = 'none';
+  removeLoader();
+}

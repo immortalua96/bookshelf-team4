@@ -17,16 +17,14 @@ export function addLoader() {
   }
 }
 
-addLoader();
 
 
 export function removeLoader() {
   const mask = document.querySelector('.mask');
-  window.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
       mask.remove();
     }, 600);
-  });
+
 }
 
 
