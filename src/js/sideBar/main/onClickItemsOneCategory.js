@@ -25,11 +25,11 @@ export async function onClickItemsOneCategory(ev) {
       const data = await fetchGategoryBooks(category);
 
       const headOneGategory = document.createElement('h2');
-      headOneGategory.classList.add('list_name_one_caterory');
+      headOneGategory.classList.add('list_name_one_category');
       headOneGategory.textContent = category;
 
       const listOneGategory = document.createElement('ul');
-      listOneGategory.classList.add('listOneCategoruBooks');
+      listOneGategory.classList.add('itemsBooksOfCategory');
 
       refs.mainPage.append(headOneGategory, listOneGategory);
 
@@ -40,10 +40,7 @@ export async function onClickItemsOneCategory(ev) {
       <li class="bookItemLI">
         <img src="${book_image}" alt="${title}" class="book_image" loading="lazy" data-id=${_id}>
           <h3 class="book_title">${title}</h3>
-          <p class="book_author">${author}</p></li>
-        <li>
-    
-      `
+          <p class="book_author">${author}</p></li>`
         )
         .join('');
       listOneGategory.insertAdjacentHTML('beforeend', markup);

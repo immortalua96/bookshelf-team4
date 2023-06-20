@@ -39,6 +39,12 @@ export async function renderBestBooks() {
       .join('');
 
     refs.mainPage.insertAdjacentHTML('beforeend', markup);
+
+    const btnsSeeMore = document.querySelectorAll('.see_more');
+
+    btnsSeeMore.forEach(btnItem => {
+      btnItem.addEventListener('click', onBtnSeeMoreClick);
+    });
   } catch (error) {
     Report.failure(
       'Something went wrong',
@@ -49,11 +55,7 @@ export async function renderBestBooks() {
   }
 }
 
-const btnsSeeMore = document.querySelectorAll('.see_more');
-
-btnsSeeMore.forEach(btnItem => {
-  btnItem.addEventListener('click', onBtnSeeMoreClick);
-});
+renderBestBooks();
 
 async function onBtnSeeMoreClick(event) {
   const categoryName = event.target.parentNode.children[0].textContent;
@@ -70,8 +72,6 @@ async function onBtnSeeMoreClick(event) {
     })
     .join('');
   ulRef.innerHTML = '';
-  ulRef.insertAdjacentHTML('beforeend', markup);
+  ulRef.innerHTML = markup;
   event.target.style.display = 'none';
 }
-
-renderBestBooks();

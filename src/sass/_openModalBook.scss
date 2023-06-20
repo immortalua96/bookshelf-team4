@@ -56,8 +56,16 @@
   padding: 40px;
 }
 
+.darkmode--activated .cardBody {
+  background-color: #202024;
+  color: rgba(255, 255, 255, 0.6);
+}
+
 .close_btn {
   z-index: 25;
+}
+.darkmode--activated .close_btn {
+  fill: #fff;
 }
 
 .cardBodiItem {
@@ -77,6 +85,10 @@
   letter-spacing: -0.04em;
   color: var(--text-color-primary);
   margin-bottom: 8px;
+}
+
+.darkmode--activated .cardTitle {
+  color: #fff;
 }
 
 .cardAuthor {
@@ -100,6 +112,10 @@
   margin-bottom: 20px;
 }
 
+.darkmode--activated .cardDescription {
+  color: #fff;
+}
+
 .addShoppingList {
   background-color: transparent;
   display: block;
@@ -115,4 +131,7 @@
   text-transform: uppercase;
   color: var(--text-color-primary);
   isolation: isolate;
+}
+.darkmode--activated .addShoppingList {
+  color: #fff;
 }
