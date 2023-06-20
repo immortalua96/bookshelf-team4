@@ -40,39 +40,38 @@ export async function renderBestBooks() {
 
     refs.mainPage.insertAdjacentHTML('beforeend', markup);
   } catch (error) {
-    error => {
-      Report.failure(
-        'Something went wrong',
-        'Please, reload the current page.',
-        'Okay'
-      );
-      console.log(error);
-    };
+    Report.failure(
+      'Something went wrong',
+      'Please, reload the current page.',
+      'Okay'
+    );
+    console.log(error);
   }
+}
 
-  const btnsSeeMore = document.querySelectorAll('.see_more');
+const btnsSeeMore = document.querySelectorAll('.see_more');
 
-  btnsSeeMore.forEach(btnItem => {
-    btnItem.addEventListener('click', onBtnSeeMoreClick);
-  });
+btnsSeeMore.forEach(btnItem => {
+  btnItem.addEventListener('click', onBtnSeeMoreClick);
+});
 
-  async function onBtnSeeMoreClick(event) {
-    const categoryName = event.target.parentNode.children[0].textContent;
-    const ulRef = event.target.parentNode.children[1];
+async function onBtnSeeMoreClick(event) {
+  const categoryName = event.target.parentNode.children[0].textContent;
+  const ulRef = event.target.parentNode.children[1];
 
-    const books = await fetchGategoryBooks(categoryName);
+  const books = await fetchGategoryBooks(categoryName);
 
-    const markup = books
-      .map(({ book_image, title, author }) => {
-        return `<li class="itemOneBook">
+  const markup = books
+    .map(({ book_image, title, author }) => {
+      return `<li class="itemOneBook">
         <img class="book_image" src="${book_image}" alt="">
           <h3 class="book_title">${title}</h3>
           <p class="book_author">${author}</p></li>`;
-      })
-      .join('');
-    ulRef.innerHTML = '';
-    ulRef.insertAdjacentHTML('beforeend', markup);
-    event.target.style.display = 'none';
-  }
+    })
+    .join('');
+  ulRef.innerHTML = '';
+  ulRef.insertAdjacentHTML('beforeend', markup);
+  event.target.style.display = 'none';
 }
+
 renderBestBooks();
