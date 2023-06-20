@@ -338,9 +338,7 @@ function renderEmpty() {
       <p class="emptyText">
         This page is empty, add some books and proceed to order.
       </p>
-
       <img class="emptyImg" src="${defaultImage}" alt="" />
-
     </div>`;
   shoppingList.innerHTML = markup;
 }
