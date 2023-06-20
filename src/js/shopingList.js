@@ -270,7 +270,7 @@ function renderBooks(book) {
   book.map(({ dataId, url, author, title, description, categories }) => {
     const markup = `
       <li class="shoppingItem"  id="${dataId}">
-        <img class="bookImg" src="${url}" alt="" />
+        <img class="bookImg" loading="lazy" src="${url}" alt="" />
         <div class="bookInformationBox">
           <div class="scroll">
             <h2 class="bookName">${title}</h2>
