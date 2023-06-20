@@ -3,7 +3,6 @@
 }
 
 .best-sellers {
-  margin-bottom: 40px;
   padding-top: 40px;
   font-family: var(--font-primary);
   font-weight: 700;
@@ -23,6 +22,7 @@
 }
 
 .list_name {
+  margin-top: 40px;
   font-family: var(--font-primary);
   font-weight: 400;
   font-size: 14px;
@@ -30,6 +30,21 @@
   text-transform: uppercase;
   letter-spacing: 0.03em;
   color: var(--text-color-secondary);
+  margin-bottom: 18px;
+}
+
+.list_name_one_caterory {
+  margin-top: 40px;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 52px;
+  /* identical to box height, or 108% */
+
+  letter-spacing: -0.04em;
+
+  color: #111111;
   margin-bottom: 18px;
 }
 

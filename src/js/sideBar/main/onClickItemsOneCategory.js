@@ -25,7 +25,7 @@ export async function onClickItemsOneCategory(ev) {
       const data = await fetchGategoryBooks(category);
 
       const headOneGategory = document.createElement('h2');
-      headOneGategory.classList.add('list_name');
+      headOneGategory.classList.add('list_name_one_caterory');
       headOneGategory.textContent = category;
 
       const listOneGategory = document.createElement('ul');
