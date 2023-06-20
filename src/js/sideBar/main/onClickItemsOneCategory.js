@@ -25,6 +25,7 @@ export async function onClickItemsOneCategory(ev) {
       const data = await fetchGategoryBooks(category);
 
       const headOneGategory = document.createElement('h2');
+      headOneGategory.classList.add('list_name');
       headOneGategory.textContent = category;
 
       const listOneGategory = document.createElement('ul');
@@ -53,7 +54,13 @@ export async function onClickItemsOneCategory(ev) {
       renderBestBooks();
     }
   } catch (error) {
-    error => {Report.failure("Searching Failure", "Sorry, there are no books matching the chosen category. Please try again.", "Okay")
-    console.log(error)};
+    error => {
+      Report.failure(
+        'Searching Failure',
+        'Sorry, there are no books matching the chosen category. Please try again.',
+        'Okay'
+      );
+      console.log(error);
+    };
   }
 }

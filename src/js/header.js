@@ -9,10 +9,10 @@ document.addEventListener('DOMContentLoaded', function () {
     right: 'unset', // default: '32px'
     left: '32px', // default: 'unset'
     time: '0.5s', // default: '0.3s'
-    mixColor: '#fff', // default: '#fff'
-    backgroundColor: '#fff', // default: '#fff'
+    mixColor: '#', // default: '#fff'
+    backgroundColor: '#f3f3f3', // default: '#fff'
     buttonColorDark: '#100f2c', // default: '#100f2c'
-    buttonColorLight: '#fff', // default: '#fff'
+    buttonColorLight: '#f6f6f6', // default: '#fff'
     saveInCookies: false, // default: true,
     label: '🌓', // default: ''
     autoMatchOsTheme: true, // default: true
@@ -38,8 +38,8 @@ refs.inputSwitch.addEventListener('click', e => {
     right: 'unset', // default: '32px'
     left: '32px', // default: 'unset'
     time: '0.5s', // default: '0.3s'
-    mixColor: '#fff', // default: '#fff'
-    backgroundColor: '#fff', // default: '#fff'
+    mixColor: '#', // default: '#fff'
+    backgroundColor: '#f3f3f3', // default: '#fff'
     buttonColorDark: '#100f2c', // default: '#100f2c'
     buttonColorLight: '#fff', // default: '#fff'
     saveInCookies: false, // default: true,
