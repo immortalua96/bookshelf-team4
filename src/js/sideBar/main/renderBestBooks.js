@@ -13,7 +13,6 @@ export async function renderBestBooks() {
       }
       const markup = data
         .map(({ list_name, books }) => {
-          console.log(books);
           return `<div class="containerForCategory">
      
         <h2 class="list_name">${list_name}</h2>
@@ -28,15 +27,15 @@ export async function renderBestBooks() {
             <p class="book_author">${books[1].author}</p></li>
           <li class="itemOneBook">
           <img loading="lazy" class="book_image" src="${books[2].book_image}" alt="">
-            <h3 class="book_title">${books[1].title}</h3>
+            <h3 class="book_title">${books[2].title}</h3>
             <p class="book_author">${books[2].author}</p></li>
           <li class="itemOneBook">
           <img loading="lazy" class="book_image" src="${books[3].book_image}" alt="">
-            <h3 class="book_title">${books[1].title}</h3>
+            <h3 class="book_title">${books[3].title}</h3>
             <p class="book_author">${books[3].author}</p></li>
           <li class="itemOneBook">
           <img loading="lazy" class="book_image" src="${books[4].book_image}" alt="">
-            <h3 class="book_title">${books[1].title}</h3>
+            <h3 class="book_title">${books[4].title}</h3>
             <p class="book_author">${books[4].author}</p></li>
         </ul>
         <button class="see_more">see more</button>
@@ -73,7 +72,6 @@ async function onBtnSeeMoreClick(event) {
 
   const markup = books
     .map(({ book_image, title, author }) => {
-      let truncatedTitle = truncateByWords(title, 3);
       return `<li class="itemOneBook">
       <img class="book_image" src="${book_image}" alt="">
       <h3 class="book_title">${title}</h3>

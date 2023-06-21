@@ -3,6 +3,7 @@ import { fetchBookID } from './fetchApi';
 import { reverseOneModalBook } from './sideBar/main/reverseOneModalBook';
 import { clearModal } from './clearModal';
 import { LocalstorageBooks } from './localstorageBooks';
+import { renderMarketPlaceLink } from '/src/js/marketplaceLinks'
 
 import Notiflix from 'notiflix';
 
@@ -40,9 +41,14 @@ async function openModalBook(ev) {
       let author = values[6];
       let title = values[24];
       let description = values[15];
+      let links = values[27];
       const markup = reverseOneModalBook(url, author, title, description);
-
       refs.modal.insertAdjacentHTML('beforeend', markup);
+
+      const marketplaceField = refs.modal.querySelector('.fieldMarketplace');
+      const marketplaceMarkup = renderMarketPlaceLink(links);
+      marketplaceField.insertAdjacentHTML('beforeend', marketplaceMarkup);
+
       document.body.classList.add('overflow');
       refs.openModalBtn.classList.remove('is-hidden');
       const addBooksLocalstorage = document.querySelector('.addShoppingList');
