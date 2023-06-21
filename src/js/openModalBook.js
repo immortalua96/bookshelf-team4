@@ -3,7 +3,11 @@ import { fetchBookID } from './fetchApi';
 import { reverseOneModalBook } from './sideBar/main/reverseOneModalBook';
 import { clearModal } from './clearModal';
 import { LocalstorageBooks } from './localstorageBooks';
+
+import Notiflix from 'notiflix';
+
 import { Report } from 'notiflix/build/notiflix-report-aio';
+
 
 
 const local = new LocalstorageBooks();
@@ -42,14 +46,33 @@ async function openModalBook(ev) {
       document.body.classList.add('overflow');
       refs.openModalBtn.classList.remove('is-hidden');
       const addBooksLocalstorage = document.querySelector('.addShoppingList');
-      local.updateButtonText(id, addBooksLocalstorage);
+      const textModalInІnstructionEl = document.querySelector(
+        '.textModalInІnstruction'
+      );
+      local.updateButtonText(
+        id,
+        addBooksLocalstorage,
+        textModalInІnstructionEl
+      );
 
       addBooksLocalstorage.addEventListener('click', () => {
         if (local.getBooks().indexOf(id) === -1) {
-          local.putBooks(id);
-          addBooksLocalstorage.textContent = 'Remove from Shopping List';
+          try {
+            local.putBooks(id);
+            addBooksLocalstorage.textContent = 'Remove from Shopping List';
+            Notiflix.Notify.success(
+              `${title} successfully add to the shopping list`
+            );
+            textModalInІnstructionEl.textContent =
+              'Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.';
+          } catch (error) {
+            Notiflix.Notify.failure(
+              `${title} was not successfully added to the shopping list`
+            );
+          }
         } else {
           local.removeBook(id);
+          textModalInІnstructionEl.textContent = '';
           addBooksLocalstorage.textContent = 'Add to Shopping List';
         }
       });
@@ -63,5 +86,3 @@ async function openModalBook(ev) {
     console.log(error);
   }
 }
-
-

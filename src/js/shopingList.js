@@ -1,5 +1,6 @@
 import defaultImage from '../images/10.png';
 import { fetchBookID } from './fetchApi';
+import { LocalstorageBooks } from './localstorageBooks';
 
 const books = [];
 
@@ -8,17 +9,17 @@ async function getData() {
   const dataParse = JSON.parse(dataString);
 
   for (const id of dataParse) {
-    console.log(id);
     const data = await fetchBookID(id);
     const values = Object.values(data);
 
+    const dataId = values[0];
     const url = values[7];
     const categories = values[1];
     const author = values[6];
     const title = values[24];
     const description = values[15];
 
-    books.push({ url, author, title, description, categories });
+    books.push({ dataId, url, author, title, description, categories });
   }
   return books;
 }
@@ -266,10 +267,12 @@ function selectsActive(activeButton) {
 
 function renderBooks(book) {
   shoppingList.innerHTML = '';
-  book.map(({ url, author, title, description, categories }) => {
+  book.map(({ dataId, url, author, title, description, categories }) => {
     const markup = `
+
       <li class="shoppingItem">
         <img loading="lazy" class="bookImg" src="${url}" alt="" />
+
         <div class="bookInformationBox">
           <div class="scroll">
             <h2 class="bookName">${title}</h2>
@@ -306,6 +309,30 @@ function renderBooks(book) {
 
     shoppingList.insertAdjacentHTML('beforeend', markup);
   });
+
+  const dumpButtons = document.querySelectorAll('.dump');
+
+  dumpButtons.forEach(button => {
+    button.addEventListener('click', async event => {
+      const liElement = event.target.closest('li');
+      const localID = liElement.id;
+
+      if (liElement) {
+        liElement.remove();
+
+        const storedIds = JSON.parse(localStorage.getItem('books'));
+        const index = storedIds.indexOf(localID);
+        if (index !== -1) {
+          storedIds.splice(index, 1);
+          localStorage.setItem('books', JSON.stringify(storedIds));
+        }
+        if (storedIds.length === 0) {
+          renderEmpty();
+          pagination.style.display = 'none';
+        }
+      }
+    });
+  });
 }
 
 function renderEmpty() {
@@ -314,7 +341,7 @@ function renderEmpty() {
         This page is empty, add some books and proceed to order.
       </p>
 
-      <img loading="lazy" class="emptyImg" src="${defaultImage}" alt="" />
+      <img class="emptyImg" src="${defaultImage}" alt="" />
 
     </div>`;
   shoppingList.innerHTML = markup;
