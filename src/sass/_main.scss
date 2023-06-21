@@ -1,11 +1,15 @@
+.containerForCategory {
+  max-width: 996px;
+}
+
 .best-sellers {
+  padding-top: 40px;
   font-family: var(--font-primary);
   font-weight: 700;
   font-size: 48px;
   line-height: calc(52 / 48);
   letter-spacing: -0.04em;
   color: var(--text-color-primary);
-  margin-bottom: 40px;
 }
 
 .best-sellers-accent {
@@ -18,6 +22,7 @@
 }
 
 .list_name {
+  margin-top: 40px;
   font-family: var(--font-primary);
   font-weight: 400;
   font-size: 14px;
@@ -28,12 +33,31 @@
   margin-bottom: 18px;
 }
 
-.itemsBooksOfCategory {
-  display: flex;
-  gap: 24px;
-  margin-bottom: 32px;
+.list_name_one_category {
+  margin-top: 40px;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 52px;
+  /* identical to box height, or 108% */
+
+  letter-spacing: -0.04em;
+
+  color: #111111;
+  margin-bottom: 40px;
 }
 
+.itemsBooksOfCategory {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+  width: 996px;
+  gap: 40px 24px;
+}
+.itemOneBook {
+  width: 180px;
+}
 .book_image {
   margin-bottom: 14px;
 }
@@ -74,29 +98,30 @@
   color: var(--text-color-primary);
   isolation: isolate;
 }
+
 .darkmode--activated .see_more {
   color: white;
 }
 #go-top {
   width: 54px;
   height: 54px;
-  display: none; 
+  display: none;
   position: fixed;
-  bottom: 20px; 
-  right: 30px; 
-  z-index: 99; 
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
   border: none;
-outline: 5px solid rgba(79, 46, 232, 0.3);
-background: var(--color-accent);
-  color: #fff; 
-  cursor: pointer; 
-  padding: 15px; 
-  border-radius: 50%; 
+  outline: 5px solid rgba(79, 46, 232, 0.3);
+  background: var(--color-accent);
+  color: #fff;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
 }
 
 #go-top:hover {
   outline: 5px solid rgba(79, 46, 232, 0.5);
-} 
+}
 
 .listOneCategoruBooks {
   display: flex;
@@ -110,4 +135,36 @@ background: var(--color-accent);
 
 .containerFlex {
   display: flex;
+}
+
+.error_page {
+  width: 900px;
+  height: 550px;
+  text-align: center;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.error_msg {
+  width: 349px;
+  height: 48px;
+
+  font-family: var(--font-primary);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+
+  text-align: center;
+  letter-spacing: -0.02em;
+
+  color: rgba(0, 0, 0, 0.6);
+}
+.error_icon{
+  width: 300px;
+  height: 300px;
+  filter: invert(19%) sepia(94%) saturate(4587%) hue-rotate(250deg) brightness(90%) contrast(102%);
 }

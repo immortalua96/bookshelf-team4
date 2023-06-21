@@ -1,143 +1,31 @@
 import defaultImage from '../images/10.png';
+import { fetchBookID } from './fetchApi';
 
-const books = [
-  // {
-  //   img: '',
-  //   name: 'WONDER',
-  //   artisticDirection: 'Hardcover fiction',
-  //   description:
-  //     'August Pullman was born with a facial difference that, up until now, has prevented him from going to a mainstream school. Starting 5th grade at Beecher Prep, he wants nothing more than to be treated as an ordinary kid—but his new classmates can’t get past Auggie’s extraordinary face. ',
-  //   author: 'R.J. Palacio',
-  // },
-  // {
-  //   img: '',
-  //   name: 'DAISY JONES & THE SIX',
-  //   artisticDirection: 'Combined  Print and E-Book Fiction',
-  //   description:
-  //     'For a while, Daisy Jones & The Six were everywhere. Their albums were on every turntable, they sold out arenas from coast to coast, their sound defined an era. And then, on 12 July 1979, they split. Nobody ever knew why. Until now. They were lovers and friends and brothers and rivals.',
-  //   author: 'Taylor Jenkins Reid',
-  // },
-  // {
-  //   img: '',
-  //   name: 'I will find you',
-  //   artisticDirection: 'Hardcover fiction',
-  //   description:
-  //     'David Burroughs was once a devoted father to his three-year-old son Matthew, living a dream life just a short drive away from the working-class suburb where he and his wife, Cheryl, first fell in love--until one fateful night when David woke suddenly to discover Matthew had been murdered while David was asleep just down the hall.',
-  //   author: 'Harlan Coben',
-  // },
-  // {
-  //   img: '',
-  //   name: 'I will find you',
-  //   artisticDirection: 'Hardcover fiction',
-  //   description:
-  //     'David Burroughs was once a devoted father to his three-year-old son Matthew, living a dream life just a short drive away from the working-class suburb where he and his wife, Cheryl, first fell in love--until one fateful night when David woke suddenly to discover Matthew had been murdered while David was asleep just down the hall.',
-  //   author: 'Harlan Coben',
-  // },
-  // {
-  //   img: '',
-  //   name: 'I will find you',
-  //   artisticDirection: 'Hardcover fiction',
-  //   description:
-  //     'David Burroughs was once a devoted father to his three-year-old son Matthew, living a dream life just a short drive away from the working-class suburb where he and his wife, Cheryl, first fell in love--until one fateful night when David woke suddenly to discover Matthew had been murdered while David was asleep just down the hall.',
-  //   author: 'Harlan Coben',
-  // },
-  // {
-  //   img: '',
-  //   name: 'I will find you',
-  //   artisticDirection: 'Hardcover fiction',
-  //   description:
-  //     'David Burroughs was once a devoted father to his three-year-old son Matthew, living a dream life just a short drive away from the working-class suburb where he and his wife, Cheryl, first fell in love--until one fateful night when David woke suddenly to discover Matthew had been murdered while David was asleep just down the hall.',
-  //   author: 'Harlan Coben',
-  // },
-  // {
-  //   img: '',
-  //   name: 'I will find you',
-  //   artisticDirection: 'Hardcover fiction',
-  //   description:
-  //     'David Burroughs was once a devoted father to his three-year-old son Matthew, living a dream life just a short drive away from the working-class suburb where he and his wife, Cheryl, first fell in love--until one fateful night when David woke suddenly to discover Matthew had been murdered while David was asleep just down the hall.',
-  //   author: 'Harlan Coben',
-  // },
-  // {
-  //   img: '',
-  //   name: 'I will find you',
-  //   artisticDirection: 'Hardcover fiction',
-  //   description:
-  //     'David Burroughs was once a devoted father to his three-year-old son Matthew, living a dream life just a short drive away from the working-class suburb where he and his wife, Cheryl, first fell in love--until one fateful night when David woke suddenly to discover Matthew had been murdered while David was asleep just down the hall.',
-  //   author: 'Harlan Coben',
-  // },
-  // {
-  //   img: '',
-  //   name: 'I will find you',
-  //   artisticDirection: 'Hardcover fiction',
-  //   description:
-  //     'David Burroughs was once a devoted father to his three-year-old son Matthew, living a dream life just a short drive away from the working-class suburb where he and his wife, Cheryl, first fell in love--until one fateful night when David woke suddenly to discover Matthew had been murdered while David was asleep just down the hall.',
-  //   author: '.........Harlan Coben',
-  // },
-  // {
-  //   img: '',
-  //   name: '12342354435I will find you',
-  //   artisticDirection: 'Hardcover fiction',
-  //   description:
-  //     'David Burroughs was once a devoted father to his three-year-old son Matthew, living a dream life just a short drive away from the working-class suburb where he and his wife, Cheryl, first fell in love--until one fateful night when David woke suddenly to discover Matthew had been murdered while David was asleep just down the hall.',
-  //   author: 'Harlan Coben',
-  // },
-  // {
-  //   img: '',
-  //   name: 'I will find you',
-  //   artisticDirection: 'щйц9кHardcover fiction',
-  //   description:
-  //     'David Burroughs was once a devoted father to his three-year-old son Matthew, living a dream life just a short drive away from the working-class suburb where he and his wife, Cheryl, first fell in love--until one fateful night when David woke suddenly to discover Matthew had been murdered while David was asleep just down the hall.',
-  //   author: 'Harlan Coben',
-  // },
-  // {
-  //   img: '',
-  //   name: 'I will find you',
-  //   artisticDirection: 'Hardcover fiction',
-  //   description:
-  //     'David Burroughs was once a devoted father to his three-year-old son Matthew, living a dream life just a short drive away from the working-class suburb where he and his wife, Cheryl, first fell in love--until one fateful night when David woke suddenly to discover Matthew had been murdered while David was asleep just down the hall.',
-  //   author: '.........Harlan Coben',
-  // },
-  // {
-  //   img: '',
-  //   name: '12342354435I will find you',
-  //   artisticDirection: 'Hardcover fiction',
-  //   description:
-  //     'David Burroughs was once a devoted father to his three-year-old son Matthew, living a dream life just a short drive away from the working-class suburb where he and his wife, Cheryl, first fell in love--until one fateful night when David woke suddenly to discover Matthew had been murdered while David was asleep just down the hall.',
-  //   author: 'Harlan Coben',
-  // },
-  // {
-  //   img: '',
-  //   name: 'I will find you',
-  //   artisticDirection: 'щйц9кHardcover fiction',
-  //   description:
-  //     'David Burroughs was once a devoted father to his three-year-old son Matthew, living a dream life just a short drive away from the working-class suburb where he and his wife, Cheryl, first fell in love--until one fateful night when David woke suddenly to discover Matthew had been murdered while David was asleep just down the hall.',
-  //   author: 'Harlan Coben',
-  // },
-  // {
-  //   img: '',
-  //   name: 'I will find you',
-  //   artisticDirection: 'Hardcover fiction',
-  //   description:
-  //     'David Burroughs was once a devoted father to his three-year-old son Matthew, living a dream life just a short drive away from the working-class suburb where he and his wife, Cheryl, first fell in love--until one fateful night when David woke suddenly to discover Matthew had been murdered while David was asleep just down the hall.',
-  //   author: '.........Harlan Coben',
-  // },
-  // {
-  //   img: '',
-  //   name: '12342354435I will find you',
-  //   artisticDirection: 'Hardcover fiction',
-  //   description:
-  //     'David Burroughs was once a devoted father to his three-year-old son Matthew, living a dream life just a short drive away from the working-class suburb where he and his wife, Cheryl, first fell in love--until one fateful night when David woke suddenly to discover Matthew had been murdered while David was asleep just down the hall.',
-  //   author: 'Harlan Coben',
-  // },
-  // {
-  //   img: '',
-  //   name: 'I will find you',
-  //   artisticDirection: 'щйц9кHardcover fiction',
-  //   description:
-  //     'David Burroughs was once a devoted father to his three-year-old son Matthew, living a dream life just a short drive away from the working-class suburb where he and his wife, Cheryl, first fell in love--until one fateful night when David woke suddenly to discover Matthew had been murdered while David was asleep just down the hall.',
-  //   author: 'Harlan Coben',
-  // },
-];
+const books = [];
+
+async function getData() {
+  const dataString = localStorage.getItem('books');
+  const dataParse = JSON.parse(dataString);
+
+  for (const id of dataParse) {
+    console.log(id);
+    const data = await fetchBookID(id);
+    const values = Object.values(data);
+
+    const url = values[7];
+    const categories = values[1];
+    const author = values[6];
+    const title = values[24];
+    const description = values[15];
+
+    books.push({ url, author, title, description, categories });
+  }
+  return books;
+}
+getData().then(result => {
+  renderPagination(result);
+});
+
 import '../images/10.png';
 
 const shoppingListContent = document.querySelector('#shoppingListContent');
@@ -378,13 +266,13 @@ function selectsActive(activeButton) {
 
 function renderBooks(book) {
   shoppingList.innerHTML = '';
-  book.map(({ img, name, artisticDirection, description, author }) => {
+  book.map(({ url, author, title, description, categories }) => {
     const markup = `
       <li class="shoppingItem">
-        <img class="bookImg" src="${img}" alt="" />
+        <img loading="lazy" class="bookImg" src="${url}" alt="" />
         <div class="bookInformationBox">
           <div class="scroll">
-            <h2 class="bookName">${name}</h2>
+            <h2 class="bookName">${title}</h2>
           </div>
           <button class="dump">
             <svg width="16" height="16">
@@ -392,7 +280,7 @@ function renderBooks(book) {
             </svg>
           </button>
           <div class="scroll">
-            <p class="artisticDirectionBook">${artisticDirection}</p>
+            <p class="artisticDirectionBook">${categories}</p>
           </div>
           <div class="artisticDirectionBookScroll">
             <p class="descriptionBook">${description}</p>
@@ -402,12 +290,12 @@ function renderBooks(book) {
           </div>
         </div>
         <div class="imgLink">
-          <a href=""> 
+          <a href="">
           <svg width="16" height="16">
               <use href="/amazon_- logo-1000x302.svg#Page-1"></use>
             </svg>
           </a>
-          <a href=""> 
+          <a href="">
           <svg width="16" height="16">
               <use href="/Users/maksim/Desktop/безіменна папка/book-square-svgrepo-com.svg"></use>
             </svg>
@@ -426,7 +314,7 @@ function renderEmpty() {
         This page is empty, add some books and proceed to order.
       </p>
 
-      <img class="emptyImg" src="${defaultImage}" alt="" />
+      <img loading="lazy" class="emptyImg" src="${defaultImage}" alt="" />
 
     </div>`;
   shoppingList.innerHTML = markup;

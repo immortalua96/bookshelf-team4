@@ -1,16 +1,39 @@
+.header {
+  z-index: 21;
+  position: relative;
+}
+
 .flexForHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 18px 0;
   // position: absolute;
-  width: 1440px;
+  // width: 1440px;
   height: 72px;
   left: 0px;
   top: 0px;
   background: #ffffff;
   border: 1.5px solid #111111;
   border-radius: 0px 0px 8px 8px;
+}
+
+@media (min-width: 375px) {
+  .flexForHeader {
+    width: 375px;
+  }
+}
+
+@media (min-width: 768px) {
+  .flexForHeader {
+    width: 768px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .flexForHeader {
+    width: 1440px;
+  }
 }
 
 .headerLogo {
@@ -27,23 +50,43 @@
   height: 24px;
   isolation: isolate;
 }
-.logoBookshelf{
+
+.logoBookshelf {
   width: 77px;
-  height:auto;
+  height: auto;
 }
+
 .logoText {
   width: 77px;
   color: #000000;
   line-height: 18px;
   font-weight: 700;
 }
+
 .headerNav {
-  display: flex;
   align-items: center;
   gap: 24px;
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+@media (min-width: 375px) {
+  .headerNav {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .headerNav {
+    display: flex;
+  }
+}
+
+@media (min-width: 1440px) {
+  .headerNav {
+    display: flex;
+  }
 }
 
 .headerList {
@@ -54,8 +97,18 @@
   padding: 0;
   margin: 0;
 }
-.headerListItem:not(:last-child) {
-  margin-right: 24px;
+
+@media (min-width: 768px) {
+  .headerListItem:not(:last-child) {
+    margin-left: 40px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .headerListItem:not(:last-child) {
+    margin-right: 24px;
+    margin-left: 0;
+  }
 }
 
 .homeLink {
@@ -81,11 +134,19 @@
   padding: 8px 16px;
   gap: 10px;
 
-  width: 72px;
+  width: 100%;
   height: 34px;
 
   background: #eac645;
   border-radius: 36px;
+}
+
+.darkmode--activated .current {
+  background: transparent;
+}
+
+.darkmode--activated .homeLink {
+  color: #fff;
 }
 
 .shoppingList {
@@ -111,11 +172,22 @@
 
 /* The switch - the box around the slider */
 .switch {
-  margin-left: 718px;
   position: relative;
   display: inline-block;
   width: 40px;
   height: 20px;
+}
+
+@media (min-width: 768px) {
+  .switch {
+    margin-left: 40px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .switch {
+    margin-left: 718px;
+  }
 }
 
 /* Hide default HTML checkbox */
@@ -156,11 +228,6 @@ input:checked + .slider {
   box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-// input:focus + .slider {
-//   background: linear-gradient(180deg, #4f2ee8 0%, #686868 100%);
-//   box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
-// }
-
 input:checked + .slider:before {
   -webkit-transform: translateX(20px);
   -ms-transform: translateX(20px);
@@ -180,18 +247,35 @@ input:checked + .slider:before {
   margin-right: 10px;
   width: 184px;
   height: 48px;
-
   background: #4f2ee8;
   border: 1.5px solid #111111;
   border-radius: 18px;
-  display: flex;
+  // display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 0px;
-
   isolation: isolate;
 }
+
+@media (min-width: 375px) {
+  .userButton {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .userButton {
+    display: flex;
+  }
+}
+
+@media (min-width: 1440px) {
+  .userButton {
+    display: flex;
+  }
+}
+
 .userSpan {
   width: 46px;
   height: 18px;
@@ -203,10 +287,7 @@ input:checked + .slider:before {
   font-weight: 500;
   font-size: 14px;
   line-height: 18px;
-  /* identical to box height, or 129% */
-
   letter-spacing: -0.04em;
-
   color: #ffffff;
 }
 
@@ -222,4 +303,57 @@ input:checked + .slider:before {
   height: 100px;
   fill: red;
   // isolation: isolate;
+}
+
+// burger menu
+
+#btn-hamburger {
+  background-color: #fff;
+  border: none;
+}
+
+@media (min-width: 768px) {
+  #btn-hamburger {
+    display: none;
+  }
+}
+
+@media (min-width: 1440px) {
+  #btn-hamburger {
+    display: none;
+  }
+}
+
+.burgerIcon {
+  width: 28px;
+  height: 28px;
+  fill: #4f2ee8;
+}
+
+.burgerIcon2 {
+  width: 28px;
+  height: 28px;
+}
+
+.burgerIcon {
+  display: block;
+}
+
+.burgerIcon2 {
+  display: none;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.mobileWrap {
+  display: flex;
+  align-items: center;
+  gap: 21px;
+  margin-right: 27px;
 }
