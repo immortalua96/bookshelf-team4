@@ -3,7 +3,7 @@ import { renderListCategories } from '../renderListCategories';
 import { clearMain } from './clearMain';
 import { fetchGategoryBooks } from '../../fetchApi';
 import { renderBestBooks } from './renderBestBooks';
-import iconError from '/src/icons/wrong.svg'
+import iconError from '/src/icons/wrong.svg';
 
 renderListCategories();
 refs.listCategories.addEventListener('click', onClickItemsOneCategory);
@@ -34,14 +34,14 @@ export async function onClickItemsOneCategory(ev) {
       refs.mainPage.append(headOneGategory, listOneGategory);
 
       const markup = data
-        .map(
-          ({ _id, title, book_image, author }) =>
-            `
+        .map(({ _id, title, book_image, author }) => {
+          // let truncatedTitle = truncateByWords(title, 3);
+          return `
       <li class="itemOneBook">
         <img src="${book_image}" alt="${title}" class="book_image" loading="lazy" data-id=${_id}>
           <h3 class="book_title">${title}</h3>
-          <p class="book_author">${author}</p></li>`
-        )
+          <p class="book_author">${author}</p></li>`;
+        })
         .join('');
       listOneGategory.insertAdjacentHTML('beforeend', markup);
     } else if (ev.target.textContent === 'All categories') {
@@ -52,8 +52,7 @@ export async function onClickItemsOneCategory(ev) {
     }
   } catch (error) {
     const errorMsg = `<div class="error_page"><img class="error_icon" src="${iconError}" alt="">
-    <p class="error_msg">Sorry, there are no books matching the chosen category.</p></div>`
-    refs.mainPage.insertAdjacentHTML('beforeend', errorMsg)
-
+    <p class="error_msg">Sorry, there are no books matching the chosen category.</p></div>`;
+    refs.mainPage.insertAdjacentHTML('beforeend', errorMsg);
   }
 }
