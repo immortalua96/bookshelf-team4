@@ -18,21 +18,21 @@
   border-radius: 0px 0px 8px 8px;
 }
 
- @media (min-width: 375px) {
-    .flexForHeader {
-      width: 375px;
-    }
-  }
-
- @media (min-width: 768px) {
+@media (min-width: 375px) {
   .flexForHeader {
-      width: 768px;
-    }
- }
+    width: 375px;
+  }
+}
+
+@media (min-width: 768px) {
+  .flexForHeader {
+    width: 768px;
+  }
+}
 
 @media (min-width: 1440px) {
-  .flexForHeader{
-     width: 1440px;
+  .flexForHeader {
+    width: 1440px;
   }
 }
 
@@ -51,7 +51,7 @@
   isolation: isolate;
 }
 
-.logoBookshelf{
+.logoBookshelf {
   width: 77px;
   height: auto;
 }
@@ -71,22 +71,22 @@
   margin: 0;
 }
 
- @media (min-width: 375px) {
-    .headerNav {
-      display: none;
-    }
-  }
-
-   @media (min-width: 768px) {
+@media (min-width: 375px) {
   .headerNav {
-      display: flex;
-    }
- }
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .headerNav {
+    display: flex;
+  }
+}
 
 @media (min-width: 1440px) {
- .headerNav {
-      display: flex;
-    }
+  .headerNav {
+    display: flex;
+  }
 }
 
 .headerList {
@@ -98,17 +98,17 @@
   margin: 0;
 }
 
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
   .headerListItem:not(:last-child) {
     margin-left: 40px;
+  }
 }
- }
 
- @media (min-width: 1440px) {
+@media (min-width: 1440px) {
   .headerListItem:not(:last-child) {
     margin-right: 24px;
     margin-left: 0;
-}
+  }
 }
 
 .homeLink {
@@ -141,6 +141,14 @@
   border-radius: 36px;
 }
 
+.darkmode--activated .current {
+  background: transparent;
+}
+
+.darkmode--activated .homeLink {
+  color: #fff;
+}
+
 .shoppingList {
   display: flex;
   align-items: center;
@@ -170,16 +178,16 @@
   height: 20px;
 }
 
-   @media (min-width: 768px) {
+@media (min-width: 768px) {
   .switch {
-  margin-left: 40px;
+    margin-left: 40px;
+  }
 }
- }
 
- @media (min-width: 1440px) {
-.switch  {
-   margin-left: 718px;
-}
+@media (min-width: 1440px) {
+  .switch {
+    margin-left: 718px;
+  }
 }
 
 /* Hide default HTML checkbox */
@@ -250,22 +258,22 @@ input:checked + .slider:before {
   isolation: isolate;
 }
 
- @media (min-width: 375px) {
-    .userButton {
-      display: none;
-    }
+@media (min-width: 375px) {
+  .userButton {
+    display: none;
   }
+}
 
-   @media (min-width: 768px) {
- .userButton {
-      display: flex;
-    }
- }
+@media (min-width: 768px) {
+  .userButton {
+    display: flex;
+  }
+}
 
 @media (min-width: 1440px) {
- .userButton {
-      display: flex;
-    }
+  .userButton {
+    display: flex;
+  }
 }
 
 .userSpan {
@@ -297,7 +305,6 @@ input:checked + .slider:before {
   // isolation: isolate;
 }
 
-
 // burger menu
 
 #btn-hamburger {
@@ -305,27 +312,27 @@ input:checked + .slider:before {
   border: none;
 }
 
-   @media (min-width: 768px) {
- #btn-hamburger  {
-  display: none;
+@media (min-width: 768px) {
+  #btn-hamburger {
+    display: none;
+  }
 }
- }
 
- @media (min-width: 1440px) {
-#btn-hamburger {
-  display: none;
-}
+@media (min-width: 1440px) {
+  #btn-hamburger {
+    display: none;
+  }
 }
 
 .burgerIcon {
-width: 28px;
-height: 28px;
-fill: #4f2ee8;
+  width: 28px;
+  height: 28px;
+  fill: #4f2ee8;
 }
 
 .burgerIcon2 {
-width: 28px;
-height: 28px;
+  width: 28px;
+  height: 28px;
 }
 
 .burgerIcon {
