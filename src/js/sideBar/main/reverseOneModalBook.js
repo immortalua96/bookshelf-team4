@@ -12,6 +12,6 @@ export function reverseOneModalBook(url, author, title, description) {
         </div>
       </div>
       <button class="addShoppingList">Add to Shopping List</button>
-      <div class="modalInІnstruction"></div>
+      <p class="textModalInІnstruction"></p>
     </div>`;
 }

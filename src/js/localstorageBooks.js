@@ -36,21 +36,15 @@ export class LocalstorageBooks {
     }
   }
 
-
-  updateButtonText(id, addBooksLocalstorage) {
-    const textModalInІnstructionEl = document.createElement('p');
-    textModalInІnstructionEl.classList.add('textModalInІnstructionEl');
-
-    const modalInІnstructionEl = document.querySelector('.modalInІnstruction');
-
+  updateButtonText(id, addBooksLocalstorage, textModalLocalstorage) {
     const books = this.getBooks();
     if (books.indexOf(id) === -1) {
-      modalInІnstructionEl.innerHTML = '';
       addBooksLocalstorage.textContent = 'Add to Shopping List';
+      textModalLocalstorage.textContent = '';
     } else {
-      modalInІnstructionEl.innerHTML =
-        'Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.';
       addBooksLocalstorage.textContent = 'Remove from Shopping List';
+      textModalLocalstorage.textContent =
+        'Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.';
     }
   }
 }
