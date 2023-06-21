@@ -10,6 +10,10 @@ async function getData() {
   const dataString = localStorage.getItem('books');
   const dataParse = JSON.parse(dataString);
 
+  if (!dataParse || !localStorage.getItem('books')) {
+    return [];
+  }
+
   for (const id of dataParse) {
     const data = await fetchBookID(id);
     const values = Object.values(data);
@@ -24,10 +28,16 @@ async function getData() {
 
     books.push({ dataId, url, author, title, description, categories, links });
   }
+
   return books;
 }
+
 getData().then(result => {
-  renderPagination(result);
+  if (result.length === 0) {
+    renderEmpty();
+  } else {
+    renderPagination(result);
+  }
 });
 
 import '../images/10.png';
@@ -272,17 +282,15 @@ function renderBooks(book) {
   shoppingList.innerHTML = '';
   book.map(({ dataId, url, author, title, description, categories }, i) => {
     const markup = `
-
-      <li class="shoppingItem">
-        <img loading="lazy" class="bookImg" src="${url}" alt="" />
-
+      <li class="shoppingItem" id="${dataId}">
+        <img class="bookImg" src="${url}" alt="" loading="lazy" />
         <div class="bookInformationBox">
           <div class="scroll">
             <h2 class="bookName">${title}</h2>
           </div>
           <button class="dump">
             <svg width="16" height="16">
-              <use href="/symbol-defs.505e88bc.svg#icon-dump"></use>
+              <use href="./icons/symbol-defs.svg#icon-dump"></use>
             </svg>
           </button>
           <div class="scroll">
@@ -344,10 +352,4 @@ function renderEmpty() {
 
     </div>`;
   shoppingList.innerHTML = markup;
-}
-
-if (books.length === 0) {
-  renderEmpty();
-} else {
-  renderPagination(books);
 }
