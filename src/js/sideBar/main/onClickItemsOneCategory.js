@@ -3,7 +3,7 @@ import { renderListCategories } from '../renderListCategories';
 import { clearMain } from './clearMain';
 import { fetchGategoryBooks } from '../../fetchApi';
 import { renderBestBooks } from './renderBestBooks';
-import { Report } from 'notiflix/build/notiflix-report-aio';
+import iconError from '/src/icons/wrong.svg'
 
 renderListCategories();
 refs.listCategories.addEventListener('click', onClickItemsOneCategory);
@@ -51,11 +51,9 @@ export async function onClickItemsOneCategory(ev) {
       renderBestBooks();
     }
   } catch (error) {
-    Report.failure(
-      'Searching Failure',
-      'Sorry, there are no books matching the chosen category. Please try again.',
-      'Okay'
-    );
-    console.log(errorMsg);
+    const errorMsg = `<div class="error_page"><img class="error_icon" src="${iconError}" alt="">
+    <p class="error_msg">"Sorry, there are no books matching the chosen category."</p></div>`
+    refs.mainPage.insertAdjacentHTML('beforeend', errorMsg)
+
   }
 }
