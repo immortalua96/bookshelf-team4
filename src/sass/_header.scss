@@ -316,7 +316,7 @@ input:checked + .slider:before {
 // burger menu
 
 #btn-hamburger {
-  background-color: #fff;
+  background-color: transparent;
   border: none;
 }
 
@@ -335,7 +335,6 @@ input:checked + .slider:before {
 .burgerIcon {
   width: 28px;
   height: 28px;
-  fill: #4f2ee8;
 }
 
 .burgerIcon2 {
