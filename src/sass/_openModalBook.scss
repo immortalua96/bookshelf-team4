@@ -10,6 +10,9 @@
   transition: visibility var(--animetion-transition),
     opacity var(--animetion-transition);
 }
+.overflow {
+  overflow: hidden;
+}
 .modal-page {
   position: absolute;
   top: 50%;

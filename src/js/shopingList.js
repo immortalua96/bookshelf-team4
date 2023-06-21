@@ -269,7 +269,7 @@ function renderBooks(book) {
   book.map(({ url, author, title, description, categories }) => {
     const markup = `
       <li class="shoppingItem">
-        <img loading="lazy" class="bookImg" src="${img}" alt="" />
+        <img loading="lazy" class="bookImg" src="${url}" alt="" />
         <div class="bookInformationBox">
           <div class="scroll">
             <h2 class="bookName">${title}</h2>

@@ -48,7 +48,7 @@ export async function renderBestBooks() {
   } catch (error) {
     Report.failure(
       'Something went wrong',
-      'Please, reload the current page.',
+      'Please, refresh the current page or try again later.',
       'Okay'
     );
     console.log(error);

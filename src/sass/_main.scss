@@ -136,3 +136,35 @@
 .containerFlex {
   display: flex;
 }
+
+.error_page {
+  width: 900px;
+  height: 550px;
+  text-align: center;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.error_msg {
+  width: 349px;
+  height: 48px;
+
+  font-family: var(--font-primary);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+
+  text-align: center;
+  letter-spacing: -0.02em;
+
+  color: rgba(0, 0, 0, 0.6);
+}
+.error_icon{
+  width: 300px;
+  height: 300px;
+  filter: invert(19%) sepia(94%) saturate(4587%) hue-rotate(250deg) brightness(90%) contrast(102%);
+}
