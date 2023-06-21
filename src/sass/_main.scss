@@ -63,6 +63,11 @@
 }
 
 .book_title {
+  overflow: hidden;
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+
   font-family: var(--font-primary);
   font-weight: 700;
   font-size: 16px;

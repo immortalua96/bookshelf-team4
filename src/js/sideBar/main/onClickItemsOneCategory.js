@@ -2,7 +2,7 @@ import { refs } from '../../refs';
 import { renderListCategories } from '../renderListCategories';
 import { clearMain } from './clearMain';
 import { fetchGategoryBooks } from '../../fetchApi';
-import { renderBestBooks } from './renderBestBooks';
+import { renderBestBooks, truncateByWords } from './renderBestBooks';
 import { Report } from 'notiflix/build/notiflix-report-aio';
 
 renderListCategories();
@@ -34,14 +34,14 @@ export async function onClickItemsOneCategory(ev) {
       refs.mainPage.append(headOneGategory, listOneGategory);
 
       const markup = data
-        .map(
-          ({ _id, title, book_image, author }) =>
-            `
+        .map(({ _id, title, book_image, author }) => {
+          // let truncatedTitle = truncateByWords(title, 3);
+          return `
       <li class="itemOneBook">
         <img src="${book_image}" alt="${title}" class="book_image" loading="lazy" data-id=${_id}>
           <h3 class="book_title">${title}</h3>
-          <p class="book_author">${author}</p></li>`
-        )
+          <p class="book_author">${author}</p></li>`;
+        })
         .join('');
       listOneGategory.insertAdjacentHTML('beforeend', markup);
     } else if (ev.target.textContent === 'All categories') {
