@@ -84,7 +84,7 @@ async function onBtnSeeMoreClick(event) {
     const errorMsg = `<p class="error_msg_list_render">...There are no books matching the chosen category...</p>`
     ulRef.insertAdjacentHTML('afterend', errorMsg)
     removeLoader();
- 
+
 }
 
 renderBestBooks();
