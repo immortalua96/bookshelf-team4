@@ -1,10 +1,16 @@
 import { refs } from '../../refs';
 import { fetchBestBooks, fetchGategoryBooks } from '../../fetchApi';
 import { Report } from 'notiflix/build/notiflix-report-aio';
+import {removeLoader, addLoader} from '/src/js/loader'
 
 export async function renderBestBooks() {
   try {
     const data = await fetchBestBooks();
+      data.forEach(item => {
+    if (item.books.length === 0 ) {
+      const errorMsg = `<h2 class="list_name">${item.list_name}</h2><div class="error_page"><p class="error_msg">Sorry, there are no books matching the chosen category.</p></div>`
+    refs.mainPage.insertAdjacentHTML('beforeend', errorMsg)
+    }
     const markup = data
       .map(
         ({ list_name, books }) => `<div class="containerForCategory">
@@ -45,11 +51,10 @@ export async function renderBestBooks() {
     btnsSeeMore.forEach(btnItem => {
       btnItem.addEventListener('click', onBtnSeeMoreClick);
       removeLoader();
-    });
+    })});
   } catch (error) {
     Report.failure(
       'Something went wrong',
-      'Please, reload the current page.',
       'Please, refresh the current page or try again later.',
       'Okay'
     );
@@ -57,25 +62,29 @@ export async function renderBestBooks() {
   }
 }
 
-renderBestBooks();
 
 async function onBtnSeeMoreClick(event) {
   addLoader();
   const categoryName = event.target.parentNode.children[0].textContent;
   const ulRef = event.target.parentNode.children[1];
 
-  const books = await fetchGategoryBooks(categoryName);
-
-  const markup = books
+    const books = await fetchGategoryBooks(categoryName);
+    
+    const markup = books
     .map(({ book_image, title, author }) => {
       return `<li class="itemOneBook">
-        <img class="book_image" src="${book_image}" alt="">
-          <h3 class="book_title">${title}</h3>
-          <p class="book_author">${author}</p></li>`;
+      <img class="book_image" src="${book_image}" alt="">
+      <h3 class="book_title">${title}</h3>
+      <p class="book_author">${author}</p></li>`;
     })
     .join('');
-  ulRef.innerHTML = '';
-  ulRef.innerHTML = markup;
-  event.target.style.display = 'none';
-  removeLoader();
+    ulRef.innerHTML = '';
+    ulRef.innerHTML = markup;
+    event.target.style.display = 'none';
+    const errorMsg = `<p class="error_msg_list_render">...There are no books matching the chosen category...</p>`
+    ulRef.insertAdjacentHTML('afterend', errorMsg)
+    removeLoader();
+
 }
+
+renderBestBooks();

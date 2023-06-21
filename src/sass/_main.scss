@@ -168,3 +168,18 @@
   height: 300px;
   filter: invert(19%) sepia(94%) saturate(4587%) hue-rotate(250deg) brightness(90%) contrast(102%);
 }
+
+.error_msg_list_render{
+  
+
+  font-family: var(--font-primary);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+
+  text-align: center;
+  letter-spacing: -0.02em;
+
+  color: var(--color-accent);
+}
