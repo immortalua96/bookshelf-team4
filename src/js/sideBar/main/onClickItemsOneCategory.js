@@ -3,7 +3,7 @@ import { renderListCategories } from '../renderListCategories';
 import { clearMain } from './clearMain';
 import { fetchGategoryBooks } from '../../fetchApi';
 import { renderBestBooks } from './renderBestBooks';
-import { Report } from 'notiflix/build/notiflix-report-aio';
+import iconError from '/src/icons/wrong.svg'
 
 renderListCategories();
 refs.listCategories.addEventListener('click', onClickItemsOneCategory);
@@ -25,11 +25,11 @@ export async function onClickItemsOneCategory(ev) {
       const data = await fetchGategoryBooks(category);
 
       const headOneGategory = document.createElement('h2');
-      headOneGategory.classList.add('list_name_one_caterory');
+      headOneGategory.classList.add('list_name_one_category');
       headOneGategory.textContent = category;
 
       const listOneGategory = document.createElement('ul');
-      listOneGategory.classList.add('listOneCategoruBooks');
+      listOneGategory.classList.add('itemsBooksOfCategory');
 
       refs.mainPage.append(headOneGategory, listOneGategory);
 
@@ -37,13 +37,10 @@ export async function onClickItemsOneCategory(ev) {
         .map(
           ({ _id, title, book_image, author }) =>
             `
-      <li class="bookItemLI">
-        <img src="${book_image}" alt="${title}" class="book_image" data-id=${_id}>
+      <li class="itemOneBook">
+        <img src="${book_image}" alt="${title}" class="book_image" loading="lazy" data-id=${_id}>
           <h3 class="book_title">${title}</h3>
-          <p class="book_author">${author}</p></li>
-        <li>
-    
-      `
+          <p class="book_author">${author}</p></li>`
         )
         .join('');
       listOneGategory.insertAdjacentHTML('beforeend', markup);
@@ -54,11 +51,9 @@ export async function onClickItemsOneCategory(ev) {
       renderBestBooks();
     }
   } catch (error) {
-    Report.failure(
-      'Searching Failure',
-      'Sorry, there are no books matching the chosen category. Please try again.',
-      'Okay'
-    );
-    console.log(errorMsg);
+    const errorMsg = `<div class="error_page"><img class="error_icon" src="${iconError}" alt="">
+    <p class="error_msg">"Sorry, there are no books matching the chosen category."</p></div>`
+    refs.mainPage.insertAdjacentHTML('beforeend', errorMsg)
+
   }
 }

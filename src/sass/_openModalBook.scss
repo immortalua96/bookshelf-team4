@@ -10,6 +10,9 @@
   transition: visibility var(--animetion-transition),
     opacity var(--animetion-transition);
 }
+.overflow {
+  overflow: hidden;
+}
 .modal-page {
   position: absolute;
   top: 50%;
@@ -56,8 +59,16 @@
   padding: 40px;
 }
 
+.darkmode--activated .cardBody {
+  background-color: #202024;
+  color: rgba(255, 255, 255, 0.6);
+}
+
 .close_btn {
   z-index: 25;
+}
+.darkmode--activated .close_btn {
+  fill: #fff;
 }
 
 .cardBodiItem {
@@ -73,10 +84,14 @@
   font-family: var(--font-primary);
   font-weight: 700;
   font-size: 24px;
-  line-height: (28/24);
+  line-height: calc(28/24);
   letter-spacing: -0.04em;
   color: var(--text-color-primary);
   margin-bottom: 8px;
+}
+
+.darkmode--activated .cardTitle {
+  color: #fff;
 }
 
 .cardAuthor {
@@ -84,7 +99,7 @@
   font-style: italic;
   font-weight: 400;
   font-size: 14px;
-  line-height: (18/14);
+  line-height: calc(18/14);
   letter-spacing: -0.04em;
   color: var(--text-color-secondary);
   margin-bottom: 20px;
@@ -94,10 +109,14 @@
   font-family: var(--font-primary);
   font-weight: 400;
   font-size: 14px;
-  line-height: (18/14);
+  line-height: calc(18/14);
   letter-spacing: -0.04em;
   color: var(--text-color-primary);
   margin-bottom: 20px;
+}
+
+.darkmode--activated .cardDescription {
+  color: #fff;
 }
 
 .addShoppingList {
@@ -106,7 +125,7 @@
   margin: 0px auto;
   border: 2px solid var(--color-accent);
   border-radius: 40px;
-  padding: 20px 130px;
+  padding: 20px 100px;
   font-family: var(--font-primary);
   font-weight: 700;
   font-size: 18px;
@@ -115,4 +134,7 @@
   text-transform: uppercase;
   color: var(--text-color-primary);
   isolation: isolate;
+}
+.darkmode--activated .addShoppingList {
+  color: #fff;
 }

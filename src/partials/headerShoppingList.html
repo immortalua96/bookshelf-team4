@@ -1,0 +1,80 @@
+<header class="header">
+    <div class="container flexForHeader">
+      <a href="./index.html" class="headerLogo">
+        <svg class="logoIcon">
+          <use href="/src/icons/symbol-defs.svg#icon-logo"></use>
+        </svg>
+        <svg class="logoBookshelf">
+          <use href="/src/icons/symbol-defs.svg#icon-Bookshelf"></use>
+        </svg>
+        <!-- <span class="logoText">Bookshelf</span> -->
+      </a>
+  
+      <nav class="headerNav">
+        <ul class="headerList">
+          <li class="headerListItem">
+            <a href="index.html" class="homeLink "> home </a>
+          </li>
+          <li class="headerListItem">
+            <a href="shopingList.html" class="shoppingList current"
+              >shopping list
+              <svg class="cartHeader">
+                <use href="/src/icons/symbol-defs.svg#icon-cart"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+  
+      <div class="mobileWrap">
+      <label class="switch">
+        <input class="darkSwitch" type="checkbox" id="switchMode" />
+        <span class="slider round"></span>
+      </label>
+  
+    <!-- burger btn -->
+    
+    <button class="js-open-menu" id="btn-hamburger" aria-label="burger-menu">
+      <div class="openI">
+        <img class="burgerIcon2" src="/src/images/x-close.svg" alt="" width="28" height="28">
+      </div>
+      <div class="closeI">
+        <img class="burgerIcon"  src="/src/images/align-left.svg" alt="" width="28" height="28">
+      </div>
+    </button>
+    <!-- burger btn -->
+  </div>
+  
+  
+      <button class="userButton">
+        <span class="userSpan"> Sign Up</span>
+        <svg class="arrowSignInHeader">
+          <use href="/src/icons/symbol-defs.svg#icon-arrowSignIn"></use>
+        </svg>
+      </button>
+    </div>
+  </header>
+  
+  <!-- Mobile menu -->
+  
+  <div class="mobile-menu js-menu-container">
+    <div class="container mobile-menu__container mobile-menu__thumb">
+      <ul class="mobile-menu__list">
+        <li class="mobile-menu__item">
+          <a href="./index.html" class="nav__item--current mobile-menu__link ">HOME</a>
+        </li>
+        <li class="mobile-menu__item">
+          <a href="./shopingList.html" class="mobile-menu__link">SHOPPING LIST
+            <svg class="mobile-menu__icon" width="20" height="20">
+              <use href="/src/icons/symbol-defs.svg#icon-cart"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+      <div class="burgerBtnWrap">
+        <button class="burgerBtn">Log out <img class="arrowIcon" src="./images/arrow-burger.png" alt="" width="20"
+            height="20"> </button>
+      </div>
+    </div>
+    <img class="mobile-menu__img" src="/src/images/books.png" alt="books" />
+  </div>

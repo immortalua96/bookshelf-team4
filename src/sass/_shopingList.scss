@@ -391,7 +391,8 @@
   margin-left: -19px;
 }
 
-.emptyPaga {
+.emptyPaga,
+.error {
   width: 900px;
   height: 550px;
 
@@ -401,7 +402,8 @@
   flex-direction: column;
 }
 
-.emptyText {
+.emptyText,
+.error {
   width: 349px;
   height: 48px;
 
@@ -417,8 +419,11 @@
   color: rgba(0, 0, 0, 0.6);
 }
 
+.darkmode--activated .emptyText {
+  color: rgba(255, 255, 255, 0.6);
+}
+
 .emptyImg {
   width: 322px;
   height: 241px;
 }
-
