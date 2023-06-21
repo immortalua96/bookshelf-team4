@@ -4,7 +4,7 @@
   "description": "",
   "homepage": "https://immortalua96.github.io/bookshelf-team4",
   "scripts": {
-    "start": "parcel src/*.html",
+    "start": "parcel src/*.html ",
     "build": "parcel build src/*.html --public-url /bookshelf-team4/"
   },
   "repository": {

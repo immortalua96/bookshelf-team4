@@ -27,9 +27,10 @@ document.addEventListener('DOMContentLoaded', function () {
     darkmode.toggle();
   }
 
-  const catAllCategFirstChild =
-    refs.listCategories.querySelector('li:first-child');
-  catAllCategFirstChild.classList.add('currentActiveLi');
+  // const catAllCategFirstChild =
+  //   refs.listCategories.querySelector('li:first-child');
+  //   console.log(catAllCategFirstChild);
+  // catAllCategFirstChild.classList.add('currentActiveLi');
 });
 
 refs.inputSwitch.addEventListener('click', e => {
