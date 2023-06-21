@@ -13,36 +13,30 @@ export async function renderBestBooks() {
       }
       const markup = data
         .map(({ list_name, books }) => {
-          let truncatedTitle0 = truncateByWords(books[0].title, 3);
-          let truncatedTitle1 = truncateByWords(books[1].title, 3);
-          let truncatedTitle2 = truncateByWords(books[2].title, 3);
-
-          let truncatedTitle3 = truncateByWords(books[3].title, 3);
-          let truncatedTitle4 = truncateByWords(books[4].title, 3);
-
+          console.log(books);
           return `<div class="containerForCategory">
      
         <h2 class="list_name">${list_name}</h2>
         <ul class="itemsBooksOfCategory">
           <li class="itemOneBook">
           <img loading="lazy" class="book_image" src="${books[0].book_image}" alt="">
-            <h3 class="book_title">${truncatedTitle0}</h3>
+            <h3 class="book_title">${books[0].title}</h3>
             <p class="book_author">${books[0].author}</p></li>
           <li class="itemOneBook">
           <img loading="lazy" class="book_image" src="${books[1].book_image}" alt="">
-            <h3 class="book_title">${truncatedTitle1}</h3>
+            <h3 class="book_title">${books[1].title}</h3>
             <p class="book_author">${books[1].author}</p></li>
           <li class="itemOneBook">
           <img loading="lazy" class="book_image" src="${books[2].book_image}" alt="">
-            <h3 class="book_title">${truncatedTitle2}</h3>
+            <h3 class="book_title">${books[1].title}</h3>
             <p class="book_author">${books[2].author}</p></li>
           <li class="itemOneBook">
           <img loading="lazy" class="book_image" src="${books[3].book_image}" alt="">
-            <h3 class="book_title">${truncatedTitle3}</h3>
+            <h3 class="book_title">${books[1].title}</h3>
             <p class="book_author">${books[3].author}</p></li>
           <li class="itemOneBook">
           <img loading="lazy" class="book_image" src="${books[4].book_image}" alt="">
-            <h3 class="book_title">${truncatedTitle4}</h3>
+            <h3 class="book_title">${books[1].title}</h3>
             <p class="book_author">${books[4].author}</p></li>
         </ul>
         <button class="see_more">see more</button>
