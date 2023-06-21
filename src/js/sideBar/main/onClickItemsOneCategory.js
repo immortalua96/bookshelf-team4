@@ -37,8 +37,8 @@ export async function onClickItemsOneCategory(ev) {
         .map(
           ({ _id, title, book_image, author }) =>
             `
-      <li class="itemOneBook">
-        <img src="${book_image}" alt="${title}" class="book_image" data-id=${_id}>
+      <li class="bookItemLI">
+        <img src="${book_image}" alt="${title}" class="book_image" loading="lazy" data-id=${_id}>
           <h3 class="book_title">${title}</h3>
           <p class="book_author">${author}</p></li>`
         )
