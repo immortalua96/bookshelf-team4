@@ -52,7 +52,7 @@ export async function onClickItemsOneCategory(ev) {
     }
   } catch (error) {
     const errorMsg = `<div class="error_page"><img class="error_icon" src="${iconError}" alt="">
-    <p class="error_msg">"Sorry, there are no books matching the chosen category."</p></div>`
+    <p class="error_msg">Sorry, there are no books matching the chosen category.</p></div>`
     refs.mainPage.insertAdjacentHTML('beforeend', errorMsg)
 
   }
