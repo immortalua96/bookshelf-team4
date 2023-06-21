@@ -6,8 +6,7 @@ export function reverseOneModalBook(url, author, title, description) {
           <h2 class="cardTitle">${title}</h2>
           <p class="cardAuthor">${author}</p>
           <p class="cardDescription">${description}</p>
-          <div>
-           ИКОНКИ
+          <div class="fieldMarketplace">
           </div>
         </div>
       </div>

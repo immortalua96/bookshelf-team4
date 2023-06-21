@@ -1,6 +1,8 @@
 import defaultImage from '../images/10.png';
 import { fetchBookID } from './fetchApi';
 import { LocalstorageBooks } from './localstorageBooks';
+import { renderMarketPlaceLink } from '/src/js/marketplaceLinks'
+
 
 const books = [];
 
@@ -18,8 +20,9 @@ async function getData() {
     const author = values[6];
     const title = values[24];
     const description = values[15];
+    const links = values[27];
 
-    books.push({ dataId, url, author, title, description, categories });
+    books.push({ dataId, url, author, title, description, categories, links });
   }
   return books;
 }
@@ -267,7 +270,7 @@ function selectsActive(activeButton) {
 
 function renderBooks(book) {
   shoppingList.innerHTML = '';
-  book.map(({ dataId, url, author, title, description, categories }) => {
+  book.map(({ dataId, url, author, title, description, categories }, i) => {
     const markup = `
 
       <li class="shoppingItem">
@@ -291,23 +294,19 @@ function renderBooks(book) {
           <div class="authorBookScroll">
             <p class="authorBook">${author}</p>
           </div>
+          <div class="fieldMarketplace">
         </div>
-        <div class="imgLink">
-          <a href="">
-          <svg width="16" height="16">
-              <use href="/amazon_- logo-1000x302.svg#Page-1"></use>
-            </svg>
-          </a>
-          <a href="">
-          <svg width="16" height="16">
-              <use href="/Users/maksim/Desktop/безіменна папка/book-square-svgrepo-com.svg"></use>
-            </svg>
-          </a>
         </div>
       </li>
     `;
 
     shoppingList.insertAdjacentHTML('beforeend', markup);
+    const marketplaceField = document.querySelector('.fieldMarketplace');
+    console.log(marketplaceField);
+
+    console.log(book[i].links);
+    const marketplaceMarkup = renderMarketPlaceLink(book[i].links);
+      marketplaceField.insertAdjacentHTML('beforeend', marketplaceMarkup);
   });
 
   const dumpButtons = document.querySelectorAll('.dump');
