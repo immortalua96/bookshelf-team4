@@ -44,10 +44,12 @@ export async function renderBestBooks() {
 
     btnsSeeMore.forEach(btnItem => {
       btnItem.addEventListener('click', onBtnSeeMoreClick);
+      removeLoader();
     });
   } catch (error) {
     Report.failure(
       'Something went wrong',
+      'Please, reload the current page.',
       'Please, refresh the current page or try again later.',
       'Okay'
     );
@@ -58,6 +60,7 @@ export async function renderBestBooks() {
 renderBestBooks();
 
 async function onBtnSeeMoreClick(event) {
+  addLoader();
   const categoryName = event.target.parentNode.children[0].textContent;
   const ulRef = event.target.parentNode.children[1];
 
@@ -74,4 +77,5 @@ async function onBtnSeeMoreClick(event) {
   ulRef.innerHTML = '';
   ulRef.innerHTML = markup;
   event.target.style.display = 'none';
+  removeLoader();
 }
