@@ -11,23 +11,23 @@ export async function renderBestBooks() {
      
       <h2 class="list_name">${list_name}</h2>
       <ul class="itemsBooksOfCategory">
-        <li>
+        <li class="itemOneBook">
         <img loading="lazy" class="book_image" src="${books[0].book_image}" alt="">
           <h3 class="book_title">${books[0].title}</h3>
           <p class="book_author">${books[0].author}</p></li>
-        <li>
+        <li class="itemOneBook">
         <img loading="lazy" class="book_image" src="${books[1].book_image}" alt="">
           <h3 class="book_title">${books[1].title}</h3>
           <p class="book_author">${books[1].author}</p></li>
-        <li>
+        <li class="itemOneBook">
         <img loading="lazy" class="book_image" src="${books[2].book_image}" alt="">
           <h3 class="book_title">${books[2].title}</h3>
           <p class="book_author">${books[2].author}</p></li>
-        <li>
+        <li class="itemOneBook">
         <img loading="lazy" class="book_image" src="${books[3].book_image}" alt="">
           <h3 class="book_title">${books[3].title}</h3>
           <p class="book_author">${books[3].author}</p></li>
-        <li>
+        <li class="itemOneBook">
         <img loading="lazy" class="book_image" src="${books[4].book_image}" alt="">
           <h3 class="book_title">${books[4].title}</h3>
           <p class="book_author">${books[4].author}</p></li>
@@ -44,11 +44,13 @@ export async function renderBestBooks() {
 
     btnsSeeMore.forEach(btnItem => {
       btnItem.addEventListener('click', onBtnSeeMoreClick);
+      removeLoader();
     });
   } catch (error) {
     Report.failure(
       'Something went wrong',
       'Please, reload the current page.',
+      'Please, refresh the current page or try again later.',
       'Okay'
     );
     console.log(error);
@@ -58,6 +60,7 @@ export async function renderBestBooks() {
 renderBestBooks();
 
 async function onBtnSeeMoreClick(event) {
+  addLoader();
   const categoryName = event.target.parentNode.children[0].textContent;
   const ulRef = event.target.parentNode.children[1];
 
@@ -74,4 +77,5 @@ async function onBtnSeeMoreClick(event) {
   ulRef.innerHTML = '';
   ulRef.innerHTML = markup;
   event.target.style.display = 'none';
+  removeLoader();
 }
