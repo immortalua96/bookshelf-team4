@@ -291,7 +291,7 @@ function renderBooks(books) {
       <li class="shoppingItem" id="${dataId}">
         <img class="bookImg" src="${url}" alt="" loading="lazy" />
         <div class="bookInformationBox">
-          <div class="scroll">
+          <div class="scroll titleBookdiv">
             <h2 class="bookName">${title}</h2>
           </div>
           <button class="dump">

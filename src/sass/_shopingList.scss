@@ -233,7 +233,14 @@
 .scroll::-webkit-scrollbar {
   width: 0px;
 }
+.titleBookdiv{
+  max-width: 144px;
+  
+  white-space: nowrap;
+  scrollbar-width: none;
 
+  margin-top: -15px;
+}
 .authorBookScroll {
   max-width: 97px;
   overflow-x: scroll;
@@ -249,7 +256,7 @@
 @media screen and (min-width: 765px) {
   .authorBookScroll {
     max-width: 300px;
-    margin-top: 50px;
+    
   }
 }
 
