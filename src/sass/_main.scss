@@ -48,7 +48,9 @@
   color: #111111;
   margin-bottom: 40px;
 }
-
+.darkmode--activated .list_name_one_category {
+  color: white;
+}
 .itemsBooksOfCategory {
   display: flex;
   flex-wrap: wrap;
@@ -169,15 +171,14 @@
 
   color: rgba(0, 0, 0, 0.6);
 }
-.error_icon{
+.error_icon {
   width: 300px;
   height: 300px;
-  filter: invert(19%) sepia(94%) saturate(4587%) hue-rotate(250deg) brightness(90%) contrast(102%);
+  filter: invert(19%) sepia(94%) saturate(4587%) hue-rotate(250deg)
+    brightness(90%) contrast(102%);
 }
 
-.error_msg_list_render{
-  
-
+.error_msg_list_render {
   font-family: var(--font-primary);
   font-style: normal;
   font-weight: 400;
