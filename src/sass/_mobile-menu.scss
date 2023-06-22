@@ -9,7 +9,7 @@
   height: 100vh;
   transform: translateX(100%);
   transition: transform 250ms ease-in-out;
-  @media (min-width: 375px) {
+  @media (min-width: 375px) and (max-width: 768px) {
     padding: 200px 130px 350px;
   }
 }
