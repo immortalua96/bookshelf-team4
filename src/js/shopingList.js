@@ -90,7 +90,7 @@ function renderPagination(books) {
     </button>`;
   let back = `<button class="reduction">
      <svg width="13" height="13">
-        <use href="../icons/symbol-defs.svg#icon-back"></use>
+        <use href="./icons/symbol-defs.svg#icon-back"></use>
       </svg>
     </button>`;
   let doubleBack = `<button class="doubleReduction">
@@ -98,7 +98,7 @@ function renderPagination(books) {
         <use href="../icons/symbol-defs.svg#icon-back "></use>
       </svg>
       <svg class="more" width="13" height="13">
-        <use href="../icons/symbol-defs.svg#icon-back"></use>
+        <use href="./icons/symbol-defs.svg#icon-back"></use>
       </svg>
     </button>`;
   let doubleNext = `<button class="doubleIncrease">
