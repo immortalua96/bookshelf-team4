@@ -208,8 +208,7 @@
 }
 
 .error_msg {
-  width: 349px;
-  height: 48px;
+ 
 
   font-family: var(--font-primary);
   font-style: normal;
@@ -225,8 +224,7 @@
 .error_icon {
   width: 300px;
   height: 300px;
-  filter: invert(19%) sepia(94%) saturate(4587%) hue-rotate(250deg)
-    brightness(90%) contrast(102%);
+  fill: var(--color-accent);
 }
 
 .error_msg_list_render {
