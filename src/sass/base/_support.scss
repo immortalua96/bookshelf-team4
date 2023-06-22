@@ -12,6 +12,14 @@
   padding-left: 40px;
   isolation: isolate;
 }
+
+@media (min-width: 375px) {
+  .fieldSupportUkraine {
+    width: 335px;
+    height: 352px;
+  }
+}
+
 .titleSupportUkraine {
   font-family: 'DM Sans';
   font-weight: 700;
@@ -49,6 +57,14 @@
 .listSupportUkraine::-webkit-scrollbar {
   display: none;
 }
+
+
+@media (min-width: 375px) {
+  .listSupportUkraine {
+    height: 188px;
+  }
+}
+
 .listItemSupport {
   display: flex;
   flex-wrap: wrap;
@@ -76,4 +92,10 @@
 
 #go-down:hover {
   background: rgba(79, 46, 232, 0.4);
+}
+
+@media (min-width: 375px) {
+  #go-down {
+      margin-top: 16px;
+  }
 }
