@@ -177,6 +177,15 @@
   width: 20px;
   height: 20px;
   margin-left: 4px;
+  fill: black;
+}
+
+.cartHeader_current {
+  fill: black;
+}
+
+.darkmode--activated .cartHeader {
+  fill: white;
 }
 
 /* The switch - the box around the slider */
