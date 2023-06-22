@@ -142,7 +142,8 @@
 }
 
 .darkmode--activated .current {
-  background: transparent;
+  // background: transparent;
+  color: black;
 }
 
 .darkmode--activated .homeLink {
@@ -164,13 +165,13 @@
   color: var(--text-color-primary);
 }
 
-.darkmode--activated .shoppingList {
-  width: 156px;
-  height: 34px;
-  color: black;
-  background: #eac645;
-  border-radius: 36px;
-}
+// .darkmode--activated .shoppingList {
+//   width: 156px;
+//   height: 34px;
+//   color: black;
+//   background: #eac645;
+//   border-radius: 36px;
+// }
 
 .cartHeader {
   width: 20px;
