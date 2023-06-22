@@ -30,13 +30,14 @@ refs.mainPage.addEventListener('click', openModalBook);
 
 async function openModalBook(ev) {
   try {
+    console.log(ev.target);
     if (ev.target.nodeName === 'IMG') {
       clearModal();
       const id = ev.target.dataset.id;
-
+      console.log(id);
       const data = await fetchBookID(id);
       const values = Object.values(data);
-
+      
       let url = values[7];
       let author = values[6];
       let title = values[24];
