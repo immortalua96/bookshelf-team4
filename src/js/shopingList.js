@@ -310,9 +310,7 @@ function renderBooks(book) {
 
     shoppingList.insertAdjacentHTML('beforeend', markup);
     const marketplaceField = document.querySelector('.fieldMarketplace');
-    console.log(marketplaceField);
 
-    console.log(book[i].links);
     const marketplaceMarkup = renderMarketPlaceLink(book[i].links);
       marketplaceField.insertAdjacentHTML('beforeend', marketplaceMarkup);
   });
