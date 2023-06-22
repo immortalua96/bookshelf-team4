@@ -112,7 +112,7 @@
   width: 40px;
 
   margin-top: auto;
-  font-family: 'DM Sans';
+  font-family: var(--font-primary);
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
@@ -152,7 +152,7 @@
   align-items: center;
   text-transform: uppercase;
 
-  font-family: 'DM Sans';
+  font-family: var(--font-primary);
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -297,7 +297,7 @@ input:checked + .slider:before {
   margin-left: 14px;
   margin-bottom: 15px;
   margin-top: 15px;
-  font-family: 'DM Sans';
+  font-family: var(--font-primary);
   font-style: normal;
   font-weight: 500;
   font-size: 14px;

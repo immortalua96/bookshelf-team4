@@ -96,7 +96,7 @@
 
   display: flex;
 
-  font-family: 'DM Sans';
+  font-family: var(--font-primary);
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -116,7 +116,7 @@
 }
 
 .artisticDirectionBook {
-  font-family: 'DM Sans';
+  font-family: var(--font-primary);
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -132,7 +132,7 @@
   width: 193px;
   height: 68px;
 
-  font-family: 'DM Sans';
+  font-family: var(--font-primary);
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -161,7 +161,7 @@
 }
 
 .authorBook {
-  font-family: 'DM Sans';
+  font-family: var(--font-primary);
   font-style: italic;
   font-weight: 400;
   font-size: 12px;
@@ -302,7 +302,7 @@
   border-radius: 50%;
 
   color: var(--text-color-primary);
-  font-family: 'DM Sans';
+  font-family: var(--font-primary);
   font-style: normal;
   font-weight: 700;
   font-size: 18px;

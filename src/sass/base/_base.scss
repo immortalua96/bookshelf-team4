@@ -1,3 +1,7 @@
+@font-face {
+  font-family: var(--font-primary);
+  src: url('https://fonts.googleapis.com/css2?family=Inter&family=Kalam&family=Roboto:wght@400;500;700&display=swap');
+}
 .darkmode--activated .darkmode-background {
   background-color: #202024; /* цвет фона в тёмном режиме */
 }
@@ -37,7 +41,8 @@
   background: #111111;
 }
 
-.darkmode--activated .logoBookshelf {
+.darkmode--activated .logoBookshelf,
+.darkmode--activated .modal-close-btn {
   fill: #fff;
 }
 

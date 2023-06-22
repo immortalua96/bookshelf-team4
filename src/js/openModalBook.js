@@ -18,8 +18,7 @@ function toggleModal() {
   document.body.classList.remove('overflow')
 }
 function onCloseModal (event) {
-  const modalPage = document.querySelector('.modal-page')
-if (event.target.nodeName !== "DIV") {return} 
+if (event.target.className !== "backdrop-modal") {return} 
   toggleModal()}
 
 refs.closeModalBtn.addEventListener('click', toggleModal);
