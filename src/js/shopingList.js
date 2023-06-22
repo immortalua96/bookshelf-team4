@@ -1,12 +1,18 @@
 import defaultImage from '../images/10.png';
 import { fetchBookID } from './fetchApi';
 import { LocalstorageBooks } from './localstorageBooks';
+import { renderMarketPlaceLink } from '/src/js/marketplaceLinks'
+
 
 const books = [];
 
 async function getData() {
   const dataString = localStorage.getItem('books');
   const dataParse = JSON.parse(dataString);
+
+  if (!dataParse || !localStorage.getItem('books')) {
+    return [];
+  }
 
   for (const id of dataParse) {
     const data = await fetchBookID(id);
@@ -18,13 +24,20 @@ async function getData() {
     const author = values[6];
     const title = values[24];
     const description = values[15];
+    const links = values[27];
 
-    books.push({ dataId, url, author, title, description, categories });
+    books.push({ dataId, url, author, title, description, categories, links });
   }
+
   return books;
 }
+
 getData().then(result => {
-  renderPagination(result);
+  if (result.length === 0) {
+    renderEmpty();
+  } else {
+    renderPagination(result);
+  }
 });
 
 import '../images/10.png';
@@ -267,19 +280,17 @@ function selectsActive(activeButton) {
 
 function renderBooks(book) {
   shoppingList.innerHTML = '';
-  book.map(({ dataId, url, author, title, description, categories }) => {
+  book.map(({ dataId, url, author, title, description, categories }, i) => {
     const markup = `
-
-      <li class="shoppingItem">
-        <img loading="lazy" class="bookImg" src="${url}" alt="" />
-
+      <li class="shoppingItem" id="${dataId}">
+        <img class="bookImg" src="${url}" alt="" loading="lazy" />
         <div class="bookInformationBox">
           <div class="scroll">
             <h2 class="bookName">${title}</h2>
           </div>
           <button class="dump">
             <svg width="16" height="16">
-              <use href="/symbol-defs.505e88bc.svg#icon-dump"></use>
+              <use href="./icons/symbol-defs.svg#icon-dump"></use>
             </svg>
           </button>
           <div class="scroll">
@@ -291,23 +302,17 @@ function renderBooks(book) {
           <div class="authorBookScroll">
             <p class="authorBook">${author}</p>
           </div>
+          <div class="fieldMarketplace">
         </div>
-        <div class="imgLink">
-          <a href="">
-          <svg width="16" height="16">
-              <use href="/amazon_- logo-1000x302.svg#Page-1"></use>
-            </svg>
-          </a>
-          <a href="">
-          <svg width="16" height="16">
-              <use href="/Users/maksim/Desktop/безіменна папка/book-square-svgrepo-com.svg"></use>
-            </svg>
-          </a>
         </div>
       </li>
     `;
 
     shoppingList.insertAdjacentHTML('beforeend', markup);
+    const marketplaceField = document.querySelector('.fieldMarketplace');
+
+    const marketplaceMarkup = renderMarketPlaceLink(book[i].links);
+      marketplaceField.insertAdjacentHTML('beforeend', marketplaceMarkup);
   });
 
   const dumpButtons = document.querySelectorAll('.dump');
@@ -345,10 +350,4 @@ function renderEmpty() {
 
     </div>`;
   shoppingList.innerHTML = markup;
-}
-
-if (books.length === 0) {
-  renderEmpty();
-} else {
-  renderPagination(books);
 }

@@ -26,7 +26,15 @@ export async function onClickItemsOneCategory(ev) {
 
       const headOneGategory = document.createElement('h2');
       headOneGategory.classList.add('list_name_one_category');
-      headOneGategory.textContent = category;
+
+      const categoryArray = category.split(" ");
+      const titleStyleMarkup = categoryArray
+    .map((item, i) => {
+      if (i+1 !== categoryArray.length) { return `<span>${item}</span>`}
+      return `<span class="title-accent">${item}</span>`
+    })
+    .join(" ");
+    headOneGategory.innerHTML= titleStyleMarkup;
 
       const listOneGategory = document.createElement('ul');
       listOneGategory.classList.add('itemsBooksOfCategory');
@@ -35,7 +43,6 @@ export async function onClickItemsOneCategory(ev) {
 
       const markup = data
         .map(({ _id, title, book_image, author }) => {
-          // let truncatedTitle = truncateByWords(title, 3);
           return `
       <li class="itemOneBook">
         <img src="${book_image}" alt="${title}" class="book_image" loading="lazy" data-id=${_id}>

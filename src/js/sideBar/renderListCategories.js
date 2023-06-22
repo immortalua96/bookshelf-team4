@@ -5,6 +5,7 @@ import { Report } from 'notiflix/build/notiflix-report-aio';
 export async function renderListCategories() {
   try {const data = await fetchCategories();
   const markup = data
+ 
     .map(({ list_name }) => ` <li class="itemsCategories">${list_name}</li>`)
     .join('');
   refs.listCategories.insertAdjacentHTML('beforeend', markup);}
