@@ -1,3 +1,10 @@
+@media (min-width: 375px) {
+  .containerMob {
+   margin-left: 20px;
+   margin-right: 20px;
+}
+}
+
 .ulListCategories {
   width: 356px;
   height: 472px;
@@ -8,6 +15,15 @@
   flex-direction: column;
   overflow: auto;
 }
+
+@media (min-width: 375px) {
+  .ulListCategories  {
+    width: 335px;
+    height: 228px;
+    margin-bottom: 40px;
+  }
+}
+
 .itemsCategories {
   font-family: 'DM Sans';
   font-style: normal;

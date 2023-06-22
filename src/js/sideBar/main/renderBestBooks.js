@@ -19,19 +19,19 @@ export async function renderBestBooks() {
           <img loading="lazy" class="book_image" src="${books[0].book_image}" data-id="${books[0]._id}" alt="">
             <h3 class="book_title">${books[0].title}</h3>
             <p class="book_author">${books[0].author}</p></li>
-          <li class="itemOneBook">
+          <li class="itemOneBook itemOneBookMob">
           <img loading="lazy" class="book_image" src="${books[1].book_image}"  data-id="${books[1]._id}"alt="">
             <h3 class="book_title">${books[1].title}</h3>
             <p class="book_author">${books[1].author}</p></li>
-          <li class="itemOneBook">
+          <li class="itemOneBook itemOneBookMob">
           <img loading="lazy" class="book_image" src="${books[2].book_image}"  data-id="${books[2]._id}"alt="">
             <h3 class="book_title">${books[2].title}</h3>
             <p class="book_author">${books[2].author}</p></li>
-          <li class="itemOneBook">
+          <li class="itemOneBook itemOneBookMob">
           <img loading="lazy" class="book_image" src="${books[3].book_image}"  data-id="${books[3]._id}"alt="">
             <h3 class="book_title">${books[3].title}</h3>
             <p class="book_author">${books[3].author}</p></li>
-          <li class="itemOneBook">
+          <li class="itemOneBook itemOneBookMob">
           <img loading="lazy" class="book_image" src="${books[4].book_image}" data-id="${books[4]._id}" alt="">
             <h3 class="book_title">${books[4].title}</h3>
             <p class="book_author">${books[4].author}</p></li>
@@ -49,8 +49,12 @@ export async function renderBestBooks() {
 
     btnsSeeMore.forEach(btnItem => {
       btnItem.addEventListener('click', onBtnSeeMoreClick);
-      // removeLoader();
+      
+    //  const lastBtnMore =  
+
     });
+
+
   } catch (error) {
     Report.failure(
       'Something went wrong',
