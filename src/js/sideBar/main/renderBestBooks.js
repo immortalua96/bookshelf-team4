@@ -6,14 +6,10 @@ import { removeLoader, addLoader } from '/src/js/loader';
 export async function renderBestBooks() {
   try {
     const data = await fetchBestBooks();
-    data.forEach(item => {
-      if (item.books.length === 0) {
-        const errorMsg = `<h2 class="list_name">${item.list_name}</h2><div class="error_page"><p class="error_msg">Sorry, there are no books matching the chosen category.</p></div>`;
-        refs.mainPage.insertAdjacentHTML('beforeend', errorMsg);
-      }
-      const markup = data
-        .map(({ list_name, books }) => {
-          return `<div class="containerForCategory">
+
+    const markup = data
+      .map(({ list_name, books }) => {
+        return `<div class="containerForCategory">
      
         <h2 class="list_name">${list_name}</h2>
         <ul class="itemsBooksOfCategory">
@@ -41,17 +37,16 @@ export async function renderBestBooks() {
         <button class="see_more">see more</button>
 
     </div>`;
-        })
-        .join('');
+      })
+      .join('');
 
-      refs.mainPage.insertAdjacentHTML('beforeend', markup);
+    refs.mainPage.insertAdjacentHTML('beforeend', markup);
 
-      const btnsSeeMore = document.querySelectorAll('.see_more');
+    const btnsSeeMore = document.querySelectorAll('.see_more');
 
-      btnsSeeMore.forEach(btnItem => {
-        btnItem.addEventListener('click', onBtnSeeMoreClick);
-        removeLoader();
-      });
+    btnsSeeMore.forEach(btnItem => {
+      btnItem.addEventListener('click', onBtnSeeMoreClick);
+      removeLoader();
     });
   } catch (error) {
     Report.failure(
