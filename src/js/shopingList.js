@@ -296,7 +296,7 @@ function renderBooks(books) {
           </div>
           <button class="dump">
             <svg width="16" height="16">
-              <use href="./icons/symbol-defs.svg#icon-dump"></use>
+              <use href="/symbol-defs.505e88bc.svg#icon-dump"></use>
             </svg>
           </button>
           <div class="scroll">
