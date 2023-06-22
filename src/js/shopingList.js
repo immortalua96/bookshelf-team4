@@ -85,20 +85,20 @@ function renderPagination(books) {
   let paginationMarkup = '';
   let next = `<button class="increase">
       <svg width="13" height="13">
-        <use href="/symbol-defs.505e88bc.svg#icon-next"></use>
+        <use href="../icons/symbol-defs.svg#icon-next"></use>
       </svg>
     </button>`;
   let back = `<button class="reduction">
      <svg width="13" height="13">
-        <use href="/symbol-defs.505e88bc.svg#icon-back"></use>
+        <use href="../icons/symbol-defs.svg#icon-back"></use>
       </svg>
     </button>`;
   let doubleBack = `<button class="doubleReduction">
       <svg width="13" height="13">
-        <use href="/symbol-defs.505e88bc.svg#icon-back "></use>
+        <use href="../icons/symbol-defs.svg#icon-back "></use>
       </svg>
       <svg class="more" width="13" height="13">
-        <use href="/symbol-defs.505e88bc.svg#icon-back"></use>
+        <use href="../icons/symbol-defs.svg#icon-back"></use>
       </svg>
     </button>`;
   let doubleNext = `<button class="doubleIncrease">
@@ -296,7 +296,7 @@ function renderBooks(books) {
           </div>
           <button class="dump">
             <svg width="16" height="16">
-              <use href="/symbol-defs.505e88bc.svg#icon-dump"></use>
+              <use href="/icons/close.svg"></use>
             </svg>
           </button>
           <div class="scroll">
