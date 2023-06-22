@@ -1,4 +1,4 @@
-@media screen and (max-width:768px) {
+@media screen and (min-width:768px) and (max-width:1439px) {
     .fieldSupportUkraine{
         display: none;
     }
@@ -29,14 +29,14 @@
     }
 }
 
-@media screen and (max-width: 450px) {
+/*@media screen and (max-width: 450px) {
 .fieldSupportUkraine {
     display: none;
 }
-/*
+
 .mobile-menu {
     display: none;
-}*/
+}
 .shoppingListBox{
     margin-top: 40px;
 }
@@ -58,3 +58,4 @@
 }
 
 }
+*/
