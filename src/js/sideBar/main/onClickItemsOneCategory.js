@@ -40,7 +40,7 @@ export async function onClickItemsOneCategory(ev) {
       listOneGategory.classList.add('itemsBooksOfCategory');
 
       refs.mainPage.append(headOneGategory, listOneGategory);
-
+      console.log(data);
       const markup = data
         .map(({ _id, title, book_image, author }) => {
           return `
