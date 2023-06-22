@@ -19,7 +19,7 @@
   color: var(--text-color-primary);
 }
 
-@media (min-width: 375px) {
+@media (min-width: 375px) and (max-width: 768px) {
   .best-sellers {
  font-size: 32px;
   }
@@ -35,7 +35,7 @@
   color: var(--color-accent);
 }
 
-@media (min-width: 375px) {
+@media (min-width: 375px) and (max-width: 768px) {
   .best-sellers-accent {
  font-size: 32px;
   }
@@ -81,14 +81,14 @@
   width: 180px;
 }
 
-@media (min-width: 375px) {
+@media (min-width: 375px) and (max-width: 768px) {
   .itemsBooksOfCategory   {
     width: 335px;
     margin-bottom: 8px;
   }
 }
 
-@media (min-width: 375px) {
+@media (min-width: 375px) and (max-width: 768px) {
   .itemOneBookMob  {
     display: none;
   }
@@ -99,7 +99,7 @@
 }
 
 
-@media (min-width: 375px) {
+@media (min-width: 375px) and (max-width: 768px) {
   .book_image   {
     width: 335px;
     height: 485px;
@@ -189,7 +189,7 @@
 }
 
 
-@media (min-width: 375px) {
+@media (min-width: 375px) and (max-width: 768px) {
   .containerFlex {
     width: 375px;
     flex-direction: column;

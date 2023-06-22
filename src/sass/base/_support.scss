@@ -13,7 +13,7 @@
   isolation: isolate;
 }
 
-@media (min-width: 375px) {
+@media screen and (min-width: 375px) and (max-width: 768px) {
   .fieldSupportUkraine {
     width: 335px;
     height: 352px;
@@ -59,7 +59,7 @@
 }
 
 
-@media (min-width: 375px) {
+@media screen and (min-width: 375px) and (max-width: 768px) {
   .listSupportUkraine {
     height: 188px;
   }
@@ -94,7 +94,7 @@
   background: rgba(79, 46, 232, 0.4);
 }
 
-@media (min-width: 375px) {
+@media screen and (min-width: 375px) and (max-width: 768px) {
   #go-down {
       margin-top: 16px;
   }
