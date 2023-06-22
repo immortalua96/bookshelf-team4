@@ -1,12 +1,10 @@
 import defaultImage from '../images/10.png';
 import { fetchBookID } from './fetchApi';
-import { LocalstorageBooks } from './localstorageBooks';
-import { renderMarketPlaceLink } from '/src/js/marketplaceLinks'
-
+import { renderMarketPlaceLink } from '/src/js/marketplaceLinks';
 
 const books = [];
 
-async function getData() {
+export async function getData() {
   const dataString = localStorage.getItem('books');
   const dataParse = JSON.parse(dataString);
 
@@ -26,7 +24,15 @@ async function getData() {
     const description = values[15];
     const links = values[27];
 
-    books.push({ dataId, url, author, title, description, categories, links });
+    books.push({
+      dataId,
+      url,
+      author,
+      title,
+      description,
+      categories,
+      links,
+    });
   }
 
   return books;
@@ -106,9 +112,9 @@ function renderPagination(books) {
 
   for (let i = 1; i <= totalPages; i += 1) {
     if (i === currentPage) {
-      paginationMarkup += `<li><button class="paginationButton paginationButtonCurrent">${i}</button></li>`;
+      paginationMarkup += `<li class="paginationItem"><button class="paginationButton paginationButtonCurrent">${i}</button></li>`;
     } else {
-      paginationMarkup += `<li><button class="paginationButton">${i}</button></li>`;
+      paginationMarkup += `<li class="paginationItem"><button class="paginationButton">${i}</button></li>`;
     }
   }
 
@@ -277,11 +283,11 @@ function selectsActive(activeButton) {
   });
   activeButton.classList.add('paginationButtonCurrent');
 }
-
-function renderBooks(book) {
+function renderBooks(books) {
   shoppingList.innerHTML = '';
-  book.map(({ dataId, url, author, title, description, categories }, i) => {
-    const markup = `
+  books.forEach(
+    ({ dataId, url, author, title, description, categories, links }) => {
+      const markup = `
       <li class="shoppingItem" id="${dataId}">
         <img class="bookImg" src="${url}" alt="" loading="lazy" />
         <div class="bookInformationBox">
@@ -298,24 +304,23 @@ function renderBooks(book) {
           </div>
           <div class="artisticDirectionBookScroll">
             <p class="descriptionBook">${description}</p>
-          </div>
+          </div> 
           <div class="authorBookScroll">
             <p class="authorBook">${author}</p>
           </div>
-          <div class="fieldMarketplace">
-        </div>
+          <div class="fieldMarketplace-${dataId}"></div>
         </div>
       </li>
     `;
 
-    shoppingList.insertAdjacentHTML('beforeend', markup);
-    const marketplaceField = document.querySelector('.fieldMarketplace');
-    console.log(marketplaceField);
-
-    console.log(book[i].links);
-    const marketplaceMarkup = renderMarketPlaceLink(book[i].links);
+      shoppingList.insertAdjacentHTML('beforeend', markup);
+      const marketplaceField = document.querySelector(
+        `.fieldMarketplace-${dataId}`
+      );
+      const marketplaceMarkup = renderMarketPlaceLink(links);
       marketplaceField.insertAdjacentHTML('beforeend', marketplaceMarkup);
-  });
+    }
+  );
 
   const dumpButtons = document.querySelectorAll('.dump');
 
