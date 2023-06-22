@@ -3,6 +3,8 @@ export function reverseOneModalBook(url, author, title, description) {
       <div class="cardBodiItem">
         <img class="oneBookImg" loading="lazy" src="${url}" alt="${title}" />
         <div class="wrapper">
+          <button type="button" class="modal-close-btn"  data-modal-close>
+          </button>
           <h2 class="cardTitle">${title}</h2>
           <p class="cardAuthor">${author}</p>
           <p class="cardDescription">${description}</p>
