@@ -76,6 +76,7 @@
 }
 
 .menu-toggle {
+//  z-index: 21;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -122,6 +123,10 @@
 
 .menu-container.is-open {
   transform: translateX(0);
+}
+
+._lock {
+  overflow: hidden;
 }
 
 
