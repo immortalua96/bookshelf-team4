@@ -29,19 +29,20 @@
       <input class="darkSwitch" type="checkbox" id="switchMode" />
       <span class="slider round"></span>
     </label>
-  <button class="js-open-menu" id="btn-hamburger" aria-label="burger-menu">
-    <div class="openI">
-      <svg class="burgerIcon2">
-        <use href="/src/images/x-close.svg#x-close"></use>
-      </svg>
-    </div>
-    <div class="closeI">
-      <svg class="burgerIcon">
+<!-- burger -->
+    <button class="menu-toggle js-open-menu" aria-expanded="false" aria-controls="mobile-menu">
+      <svg class="mobile-menu-open" width="32" height="22">
         <use href="/src/images/align-left.svg#align-left"></use>
       </svg>
+    </button>
+      <button class="menu-toggle js-close-menu">
+        <svg class="modal-close-btn-icon" width="24" height="24">
+          <use href="./images/x-close.svg#x-close"></use>
+        </svg>
+      </button>
     </div>
-  </button>
-</div>
+
+
     <button class="userButton">
       <span class="userSpan"> Sign Up</span>
       <svg class="arrowSignInHeader">
@@ -50,8 +51,10 @@
     </button>
   </div>
 </header>
+
+
 <!-- Mobile menu -->
-<div class="mobile-menu js-menu-container">
+<div class="menu-container js-menu-container" id="mobile-menu">
   <div class="container mobile-menu__container mobile-menu__thumb">
     <ul class="mobile-menu__list">
       <li class="mobile-menu__item">
@@ -70,5 +73,6 @@
           height="20"> </button>
     </div>
   </div>
-  <img class="mobile-menu__img" src="/src/images/books.png" alt="books" />
+      <img class="mobile-menu__img" src="/src/images/books.png" alt="books" />
+  </div>
 </div>
