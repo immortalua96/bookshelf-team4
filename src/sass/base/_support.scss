@@ -13,7 +13,7 @@
   isolation: isolate;
 }
 
-@media screen and (min-width: 375px) and (max-width: 768px) {
+@media screen and (min-width: 375px) and (max-width: 767px) {
   .fieldSupportUkraine {
     width: 335px;
     height: 352px;
@@ -58,8 +58,7 @@
   display: none;
 }
 
-
-@media screen and (min-width: 375px) and (max-width: 768px) {
+@media screen and (min-width: 375px) and (max-width: 767px) {
   .listSupportUkraine {
     height: 188px;
   }
@@ -94,8 +93,8 @@
   background: rgba(79, 46, 232, 0.4);
 }
 
-@media screen and (min-width: 375px) and (max-width: 768px) {
+@media screen and (min-width: 375px) and (max-width: 767px) {
   #go-down {
-      margin-top: 16px;
+    margin-top: 16px;
   }
 }

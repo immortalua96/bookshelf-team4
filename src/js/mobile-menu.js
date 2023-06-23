@@ -1,4 +1,3 @@
-
 (() => {
   const mobileMenu = document.querySelector('.js-menu-container');
   const openMenuBtn = document.querySelector('.js-open-menu');
@@ -9,7 +8,7 @@
       openMenuBtn.getAttribute('aria-expanded') === 'true' || false;
     openMenuBtn.setAttribute('aria-expanded', !isMenuOpen);
     mobileMenu.classList.toggle('is-open');
-    document.body.classList.toggle('_lock');
+    // document.body.classList.toggle('_lock');
 
     // const scrollLockMethod = !isMenuOpen
     //   ? 'disableBodyScroll'
@@ -27,6 +26,4 @@
   //   openMenuBtn.setAttribute('aria-expanded', false);
   //   // bodyScrollLock.enableBodyScroll(document.body);
   // });
-
 })();
-
