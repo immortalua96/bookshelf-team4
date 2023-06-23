@@ -38,16 +38,24 @@
 .modal-close-btn {
   position: absolute;
   top: 24px;
-  right: -142px;
-  fill: var(--text-color-primary);
+  left: 527px;
+  z-index: 2;
   background-color: transparent;
+  border: none;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0;
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
+  fill: var(--text-color-primary);
 }
+.modal-close-btn:hover, 
+.modal-close-btn:focus{
+  fill: var(--color-accent)
+}
+
+
 
 .cardBody {
   position: relative;
