@@ -1,8 +1,8 @@
 @media screen and (min-width: 375px) and (max-width: 767px) {
   .containerMob {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
+   margin-left: 20px;
+   margin-right: 20px;
+}
 }
 
 .ulListCategories {
@@ -17,7 +17,7 @@
 }
 
 @media screen and (min-width: 375px) and (max-width: 767px) {
-  .ulListCategories {
+  .ulListCategories  {
     width: 335px;
     height: 228px;
     margin-bottom: 40px;
@@ -80,3 +80,4 @@
     #ffffff 100%
   );
 }
+
