@@ -29,7 +29,8 @@
 }
 
 @media screen and (min-width: 375px) and (max-width: 767px) {
-  .best-sellers-accent {
+  .best-sellers-accent,
+  .title-accent {
     font-size: 32px;
   }
 }
@@ -63,6 +64,13 @@
 .darkmode--activated .list_name_one_category {
   color: white;
 }
+
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  .list_name_one_category {
+    font-size: 32px;
+  }
+}
+
 .itemsBooksOfCategory {
   display: flex;
   flex-wrap: wrap;
