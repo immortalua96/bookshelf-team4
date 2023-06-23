@@ -6,7 +6,6 @@ import { Report } from 'notiflix/build/notiflix-report-aio';
 export async function renderBestBooks() {
   try {
     const data = await fetchBestBooks();
-    console.log(data);
 
     const markup = data
       .map(({ list_name, books }) => {
@@ -45,9 +44,17 @@ export async function renderBestBooks() {
 
     const btnsSeeMore = document.querySelectorAll('.see_more');
 
+
     const lastBtnMoreIndex = btnsSeeMore.length - 1;
 
     const lastBtnMore = btnsSeeMore[lastBtnMoreIndex];
+          lastBtnMore.classList.add('lastBtnSeeMore');
+
+    btnsSeeMore.forEach(btnItem => {
+      btnItem.addEventListener('click', onBtnSeeMoreClick);
+      
+    });
+
 
     lastBtnMore.classList.add('lastBtnSeeMore');
 

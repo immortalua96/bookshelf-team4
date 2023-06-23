@@ -1,6 +1,31 @@
-@media screen and (max-width: 450px) {
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+   aside{ 
+    margin-top: 40px;
+    display: flex;
+   }
+   .containerFlex{ 
+    max-width: 100%;
+    flex-wrap: wrap;
+    column-gap: 32px;
+   }
+   .ulListCategories{
+    width: 337px;
+   }
+   .fieldSupportUkraine{
+    width: 335px;
+   }
+   .itemsBooksOfCategory{
+    width: 100%;
+    max-width: 768px;
+   }
+}
+/*@media screen and (max-width: 450px) {
     .containerFlex{
         flex-wrap: wrap;
+    }
+
+    .containerForCategory{
+        max-width: 450px;
     }
 
     .ulListCategories{
@@ -10,6 +35,8 @@
 
     .itemsBooksOfCategory{
         flex-wrap: wrap;
+        max-width: 100%;
+        padding: 0 20px;
         li{
             width: 100%;
         }
@@ -27,8 +54,11 @@
     .best-sellers-accent{
         font-size: 32px;
     }
-
+    .see_more{ 
+        margin-right: 20px;
+    }
     #mainPage{
         padding: 0;
     }
 }
+*/
