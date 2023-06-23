@@ -10,7 +10,6 @@ export async function renderBestBooks() {
 
     const markup = data
       .map(({ list_name, books }) => {
-      
         return `<div class="containerForCategory">
      
         <h2 class="list_name">${list_name}</h2>
@@ -44,17 +43,17 @@ export async function renderBestBooks() {
 
     refs.mainPage.insertAdjacentHTML('beforeend', markup);
 
-
     const btnsSeeMore = document.querySelectorAll('.see_more');
+
+    const lastBtnMoreIndex = btnsSeeMore.length - 1;
+
+    const lastBtnMore = btnsSeeMore[lastBtnMoreIndex];
+
+    lastBtnMore.classList.add('lastBtnSeeMore');
 
     btnsSeeMore.forEach(btnItem => {
       btnItem.addEventListener('click', onBtnSeeMoreClick);
-      
-    //  const lastBtnMore =  
-
     });
-
-
   } catch (error) {
     Report.failure(
       'Something went wrong',
@@ -73,7 +72,7 @@ async function onBtnSeeMoreClick(event) {
   const books = await fetchGategoryBooks(categoryName);
 
   const markup = books
-    .map(({ book_image, title, author ,_id}) => {
+    .map(({ book_image, title, author, _id }) => {
       return `<li class="itemOneBook">
       <img class="book_image" src="${book_image}" data-id="${_id}" alt="">
       <h3 class="book_title">${title}</h3>
