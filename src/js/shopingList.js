@@ -343,6 +343,8 @@ function renderBooks(books) {
           renderEmpty();
           pagination.style.display = 'none';
         }
+
+        location.reload();
       }
     });
   });
