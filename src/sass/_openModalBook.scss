@@ -21,26 +21,17 @@
   height: 584px;
   transform: translate(-50%, -50%);
   background-color: var(--color-for-body);
-  // @media screen and (max-width: 420px) {
-  //   max-width: 100%;
-  //   height: 100%;
-  //   top: 0;
-  //   left: 0;
-  //   transform: translate(0, 0);
-  // }
 }
 
-@media (min-width: 375px) and (max-width: 768px) {
+@media screen and (min-width: 375px) and (max-width: 767px) {
   .modal-page {
     max-width: 100%;
-height: 100%;
-    // transform: translate(0, 0);
+    height: 100%;
     overflow-y: scroll;
-
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
@@ -71,7 +62,7 @@ height: 100%;
   fill: var(--color-accent)
 }
 
-@media (min-width: 375px) and (max-width: 768px) {
+@media screen and (min-width: 375px) and (max-width: 767px) {
   .modal-close-btn {
     top: 12px;
     left: 335px;
@@ -80,7 +71,6 @@ height: 100%;
   }
 }
 
-  
 .cardBody {
   position: relative;
   width: 579px;
@@ -91,8 +81,7 @@ height: 100%;
   padding: 40px;
 }
 
-
-@media (min-width: 375px) and (max-width: 768px) {
+@media screen and (min-width: 375px) and (max-width: 767px) {
   .cardBody {
     width: 335px;
     height: 762px;
@@ -119,7 +108,7 @@ height: 100%;
   margin-bottom: 40px;
 }
 
-@media (min-width: 375px) and (max-width: 768px) {
+@media screen and (min-width: 375px) and (max-width: 767px) {
   .cardBodiItem {
   flex-direction: column;
   }
@@ -129,7 +118,7 @@ height: 100%;
   margin-right: 24px;
 }
 
-@media (min-width: 375px) and (max-width: 768px) {
+@media screen and (min-width: 375px) and (max-width: 767px) {
   .oneBookImg {
   width: 287px;
   height: 408px;
@@ -138,7 +127,6 @@ height: 100%;
       margin-bottom: 14px;
   }
 }
-
 
 .cardTitle {
   font-family: var(--font-primary);
@@ -151,13 +139,12 @@ height: 100%;
 }
 
 
-@media (min-width: 375px) and (max-width: 768px) {
+@media screen and (min-width: 375px) and (max-width: 767px) {
   .cardTitle {
     font-size: 16px;
      margin-bottom: 4px;
   }
 }
-
 
 .darkmode--activated .cardTitle {
   color: #fff;
@@ -208,7 +195,7 @@ height: 100%;
   color: #fff;
 }
 
-@media (min-width: 375px) and (max-width: 768px) {
+@media screen and (min-width: 375px) and (max-width: 767px) {
   .addShoppingList  {
     padding: 14px 28px;
     font-size: 14px;
