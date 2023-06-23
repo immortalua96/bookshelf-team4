@@ -239,3 +239,22 @@
 
   color: var(--color-accent);
 }
+
+
+@media (min-width: 375px) {
+  .lastBtnSeeMore {
+  margin-bottom: 80px;
+}
+}
+
+@media (min-width: 768px) {
+  .lastBtnSeeMore {
+  margin-bottom: 100px;
+}
+}
+
+@media (min-width: 1440px) {
+  .userButton {
+    margin-bottom: 72px;
+  }
+}
