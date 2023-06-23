@@ -7,6 +7,7 @@ import iconError from '/src/icons/symbol-defs.svg';
 
 renderListCategories();
 refs.listCategories.addEventListener('click', onClickItemsOneCategory);
+refs.allCategories.addEventListener('click', onClickAllCategories);
 
 export async function onClickItemsOneCategory(ev) {
   const prevActive = document.querySelector('.currentActiveLi');
@@ -27,14 +28,16 @@ export async function onClickItemsOneCategory(ev) {
       const headOneGategory = document.createElement('h2');
       headOneGategory.classList.add('list_name_one_category');
 
-      const categoryArray = category.split(" ");
+      const categoryArray = category.split(' ');
       const titleStyleMarkup = categoryArray
-    .map((item, i) => {
-      if (i+1 !== categoryArray.length) { return `<span>${item}</span>`}
-      return `<span class="title-accent">${item}</span>`
-    })
-    .join(" ");
-    headOneGategory.innerHTML= titleStyleMarkup;
+        .map((item, i) => {
+          if (i + 1 !== categoryArray.length) {
+            return `<span>${item}</span>`;
+          }
+          return `<span class="title-accent">${item}</span>`;
+        })
+        .join(' ');
+      headOneGategory.innerHTML = titleStyleMarkup;
 
       const listOneGategory = document.createElement('ul');
       listOneGategory.classList.add('itemsBooksOfCategory');
@@ -63,4 +66,8 @@ export async function onClickItemsOneCategory(ev) {
     <p class="error_msg">Sorry, there are no books matching the chosen category.</p></div>`;
     refs.mainPage.insertAdjacentHTML('beforeend', errorMsg);
   }
+}
+
+function onClickAllCategories() {
+  renderBestBooks();
 }

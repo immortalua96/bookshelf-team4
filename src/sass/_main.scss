@@ -14,7 +14,7 @@
 
 @media screen and (min-width: 375px) and (max-width: 767px) {
   .best-sellers {
- font-size: 32px;
+    font-size: 32px;
   }
 }
 
@@ -30,7 +30,7 @@
 
 @media screen and (min-width: 375px) and (max-width: 767px) {
   .best-sellers-accent {
- font-size: 32px;
+    font-size: 32px;
   }
 }
 
@@ -75,14 +75,14 @@
 }
 
 @media screen and (min-width: 375px) and (max-width: 767px) {
-  .itemsBooksOfCategory   {
+  .itemsBooksOfCategory {
     width: 335px;
     margin-bottom: 8px;
   }
 }
 
 @media screen and (min-width: 375px) and (max-width: 767px) {
-  .itemOneBookMob  {
+  .itemOneBookMob {
     display: none;
   }
 }
@@ -91,9 +91,8 @@
   margin-bottom: 14px;
 }
 
-
 @media screen and (min-width: 375px) and (max-width: 767px) {
-  .book_image   {
+  .book_image {
     width: 335px;
     height: 485px;
   }
@@ -143,16 +142,21 @@
 
 @media (min-width: 375px) {
   .lastBtnSeeMore {
-  margin-bottom: 80px;
-}
+    margin-bottom: 80px;
+  }
 }
 
 @media (min-width: 768px) {
   .lastBtnSeeMore {
-  margin-bottom: 100px;
-}
+    margin-bottom: 100px;
+  }
 }
 
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .itemOneBookTab {
+    display: none;
+  }
+}
 
 .darkmode--activated .see_more {
   color: white;
@@ -211,8 +215,6 @@
 }
 
 .error_msg {
- 
-
   font-family: var(--font-primary);
   font-style: normal;
   font-weight: 400;
@@ -242,6 +244,3 @@
 
   color: var(--color-accent);
 }
-
-
-
