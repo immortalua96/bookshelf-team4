@@ -3,7 +3,9 @@ import { fetchBookID } from './fetchApi';
 import { reverseOneModalBook } from './sideBar/main/reverseOneModalBook';
 import { clearModal } from './clearModal';
 import { LocalstorageBooks } from './localstorageBooks';
-import { renderMarketPlaceLink } from '/src/js/marketplaceLinks'
+import { renderMarketPlaceLink } from '/src/js/marketplaceLinks';
+import { removeLoader, addLoader } from '/src/js/loaderPage';
+
 
 import Notiflix from 'notiflix';
 
@@ -29,6 +31,8 @@ refs.mainPage.addEventListener('click', openModalBook);
 
 async function openModalBook(ev) {
   try {
+    addLoader();
+
     if (ev.target.nodeName === 'IMG') {
       clearModal();
       const id = ev.target.dataset.id;
@@ -82,6 +86,8 @@ async function openModalBook(ev) {
         }
       });
     }
+    removeLoader();
+
   } catch (error) {
     Report.failure(
       'Something went wrong',

@@ -6,5 +6,5 @@ import './js/sideBar/main/renderBestBooks';
 import './js/scroll';
 import './js/sideBar/main/onClickItemsOneCategory';
 import './js/openModalBook';
-import './js/loader';
+import './js/loaderPage';
 import './js/mobile-menu';
