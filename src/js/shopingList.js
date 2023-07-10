@@ -2,10 +2,14 @@ import defaultImage from '../images/10.png';
 import { fetchBookID } from './fetchApi';
 import { renderMarketPlaceLink } from '/src/js/marketplaceLinks';
 import someSvg from '../icons/symbol-defs.svg';
+import { removeLoader, addLoader } from '/src/js/loaderPage';
+
 
 const books = [];
 
 export async function getData() {
+  addLoader();
+  
   const dataString = localStorage.getItem('books');
   const dataParse = JSON.parse(dataString);
 
@@ -46,6 +50,7 @@ getData().then(result => {
     renderPagination(result);
   }
 });
+removeLoader();
 
 import '../images/10.png';
 
@@ -177,7 +182,6 @@ function renderPagination(books) {
       }
     }
   });
-
   reductionButton.addEventListener('click', () => {
     if (currentPage > 1) {
       currentPage -= 1;
@@ -239,7 +243,6 @@ function renderPagination(books) {
       }
     }
   });
-
   doubleReductionButton.addEventListener('click', () => {
     if (currentPage > 1) {
       currentPage -= 2;

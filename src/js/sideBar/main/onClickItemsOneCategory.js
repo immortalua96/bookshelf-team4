@@ -3,46 +3,34 @@ import { renderListCategories } from '../renderListCategories';
 import { clearMain } from './clearMain';
 import { fetchGategoryBooks } from '../../fetchApi';
 import { renderBestBooks } from './renderBestBooks';
+import { removeLoader, addLoader } from '/src/js/loaderPage';
+import { renderNameOneCategory } from '../../renderNameOneCategory';
 import iconError from '/src/icons/symbol-defs.svg';
 
 renderListCategories();
+
 refs.listCategories.addEventListener('click', onClickItemsOneCategory);
-refs.allCategories.addEventListener('click', onClickAllCategories);
 
 export async function onClickItemsOneCategory(ev) {
+  
   const prevActive = document.querySelector('.currentActiveLi');
   ev.target.classList.add('currentActiveLi');
   if (prevActive) {
     prevActive.classList.remove('currentActiveLi');
   }
   try {
+    addLoader();
+    clearMain();
+    renderNameOneCategory(ev);
     if (
-      ev.target.nodeName === 'LI' &&
       ev.target.textContent !== 'All categories'
-    ) {
-      clearMain();
+      ) {
+        const listOneGategory = document.createElement('ul');
+        listOneGategory.classList.add('itemsBooksOfCategory');
+        
+        refs.mainPage.append(listOneGategory);
 
-      const category = ev.target.textContent;
-      const data = await fetchGategoryBooks(category);
-
-      const headOneGategory = document.createElement('h2');
-      headOneGategory.classList.add('list_name_one_category');
-
-      const categoryArray = category.split(' ');
-      const titleStyleMarkup = categoryArray
-        .map((item, i) => {
-          if (i + 1 !== categoryArray.length) {
-            return `<span>${item}</span>`;
-          }
-          return `<span class="title-accent">${item}</span>`;
-        })
-        .join(' ');
-      headOneGategory.innerHTML = titleStyleMarkup;
-
-      const listOneGategory = document.createElement('ul');
-      listOneGategory.classList.add('itemsBooksOfCategory');
-
-      refs.mainPage.append(headOneGategory, listOneGategory);
+      const data = await fetchGategoryBooks(ev.target.textContent);
       const markup = data
         .map(({ _id, title, book_image, author }) => {
           return `
@@ -53,12 +41,11 @@ export async function onClickItemsOneCategory(ev) {
         })
         .join('');
       listOneGategory.insertAdjacentHTML('beforeend', markup);
-    } else if (ev.target.textContent === 'All categories') {
-      ev.target.classList.add('currentActiveLi');
-
-      clearMain();
-      renderBestBooks();
+    } else {
+  renderBestBooks();
     }
+   
+    removeLoader();
   } catch (error) {
     const errorMsg = `<div class="error_page"><svg class="error_icon" width="300" height="300">
     <use href="${iconError}#icon-error"></use>
@@ -68,6 +55,4 @@ export async function onClickItemsOneCategory(ev) {
   }
 }
 
-function onClickAllCategories() {
-  renderBestBooks();
-}
+

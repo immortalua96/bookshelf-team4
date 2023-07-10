@@ -1,12 +1,13 @@
 import { refs } from '../../refs';
 import { fetchBestBooks, fetchGategoryBooks } from '../../fetchApi';
 import { Report } from 'notiflix/build/notiflix-report-aio';
-// import { removeLoader, addLoader } from '/src/js/loader';
+import { removeLoader, addLoader } from '/src/js/loaderPage';
 
 export async function renderBestBooks() {
   try {
+    addLoader();
     const data = await fetchBestBooks();
-
+    
     const markup = data
       .map(({ list_name, books }) => {
         return `<div class="containerForCategory">
@@ -58,6 +59,8 @@ export async function renderBestBooks() {
     btnsSeeMore.forEach(btnItem => {
       btnItem.addEventListener('click', onBtnSeeMoreClick);
     });
+    removeLoader();
+
   } catch (error) {
     Report.failure(
       'Something went wrong',
@@ -69,7 +72,7 @@ export async function renderBestBooks() {
 }
 
 async function onBtnSeeMoreClick(event) {
-  // addLoader();
+  addLoader();
   const categoryName = event.target.parentNode.children[0].textContent;
   const ulRef = event.target.parentNode.children[1];
 
@@ -88,7 +91,7 @@ async function onBtnSeeMoreClick(event) {
   event.target.style.display = 'none';
   const errorMsg = `<p class="error_msg_list_render">...There are no books matching the chosen category...</p>`;
   ulRef.insertAdjacentHTML('afterend', errorMsg);
-  // removeLoader();
+  removeLoader();
 }
 
 renderBestBooks();
